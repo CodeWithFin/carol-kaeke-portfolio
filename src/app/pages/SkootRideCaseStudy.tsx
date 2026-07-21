@@ -3,6 +3,11 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import skootRideCoverImage from "../../../assets/images/iPhone-13-Pro-Front-4.png";
+import leaseSelectionImage from "../../../assets/images/iPhone-13-Pro-Front-3.png";
+import vehicleSelectionImage from "../../../assets/images/iPhone-13-Pro-Front-1.png";
+import identityVerificationImage from "../../../assets/images/iPhone-13-Pro-Front-2.png";
+import walletImage from "../../../assets/images/iPhone-13-Pro-Front (2).png";
 
 const DECISIONS = [
   {
@@ -62,7 +67,8 @@ const FLOW_SECTIONS = [
     id: "lease-selection",
     label: "01 — Lease Selection",
     title: "Removing the anxiety of a financial choice",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=700&fit=crop&auto=format",
+    image: leaseSelectionImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride lease selection screen showing Standard Lease and Lease-to-Own options",
     caption: "Skoot Ride — Choose Lease Type with recommended badge, benefit comparison, and Continue CTA",
     annotations: [
@@ -77,7 +83,8 @@ const FLOW_SECTIONS = [
     id: "vehicle-selection",
     label: "02 — Vehicle Selection",
     title: "Making the right vehicle feel obvious",
-    image: "https://images.unsplash.com/photo-1558980664-769d59546b3d?w=1200&h=700&fit=crop&auto=format",
+    image: vehicleSelectionImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride vehicle selection screen showing tuk-tuk and e-bike options with pricing",
     caption: "Skoot Ride — Choose Vehicle with category filters, vehicle cards, lease pricing, and Select Vehicle CTA",
     annotations: [
@@ -92,7 +99,8 @@ const FLOW_SECTIONS = [
     id: "kyc",
     label: "03 — Identity Verification",
     title: "No surprises, no abandoned applications",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=700&fit=crop&auto=format",
+    image: identityVerificationImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride identity verification screen showing document checklist and upload states",
     caption: "Skoot Ride — Verify Identity with required document list, upload progress indicators, and Submit CTA",
     annotations: [
@@ -107,7 +115,8 @@ const FLOW_SECTIONS = [
     id: "dashboard",
     label: "04 — Lease Dashboard & Application Status",
     title: "Always knowing where you stand",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=700&fit=crop&auto=format",
+    image: leaseSelectionImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride lease dashboard showing application status, lease overview, and quick actions",
     caption: "Skoot Ride — Lease Dashboard across Application Review, Approved, Active, Warning, and Immobilised states",
     annotations: [
@@ -122,7 +131,8 @@ const FLOW_SECTIONS = [
     id: "charging",
     label: "05 — Charging Experience",
     title: "Making charging feel in control, not opaque",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=700&fit=crop&auto=format",
+    image: skootRideCoverImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride charging screen showing session duration, energy usage, and stop charging action",
     caption: "Skoot Ride — Charging Session with live duration, energy consumption, progress indicator, and Stop Charging CTA",
     annotations: [
@@ -137,7 +147,8 @@ const FLOW_SECTIONS = [
     id: "wallet",
     label: "06 — Wallet & Payments",
     title: "Financial clarity for riders managing a lease",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=700&fit=crop&auto=format",
+    image: walletImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Ride wallet screen showing balance, transaction history, and top-up action",
     caption: "Skoot Ride — Wallet with available balance, categorised transaction history, and Top Up CTA",
     annotations: [
@@ -205,14 +216,16 @@ export default function SkootRideCaseStudy() {
       {/* Cover image */}
       <FadeUp>
         <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}>
+          <div
+            className="relative rounded-2xl overflow-hidden bg-muted flex items-center justify-center p-8 sm:p-12 lg:p-16"
+            style={{ height: "clamp(360px, 55vw, 600px)", boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+          >
             <img
-              src="https://images.unsplash.com/photo-1558980664-769d59546b3d?w=1400&h=700&fit=crop&auto=format"
+              src={skootRideCoverImage}
               alt="Skoot Ride — electric mobility leasing platform"
-              className="w-full object-cover"
-              style={{ height: "clamp(280px, 45vw, 560px)", filter: "saturate(0.88) contrast(1.03)" }}
+              className="max-h-full max-w-full object-contain block"
+              style={{ maxHeight: "78%" }}
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(107,143,113,0.18) 0%, rgba(28,26,23,0.06) 100%)" }} />
           </div>
         </div>
       </FadeUp>
@@ -322,14 +335,20 @@ export default function SkootRideCaseStudy() {
                   <h3 className="text-3xl lg:text-4xl font-normal text-foreground" style={{ fontFamily: "'Fraunces', serif" }}>{flow.title}</h3>
                 </div>
 
-                <div className="relative rounded-2xl overflow-hidden bg-muted mb-4" style={{ boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }}>
+                <div className="relative rounded-2xl overflow-hidden bg-muted mb-4 flex items-center justify-center" style={{ height: "clamp(280px, 42vw, 520px)", boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }}>
                   <img
                     src={flow.image}
                     alt={flow.imageAlt}
-                    className="w-full object-cover"
-                    style={{ height: "clamp(220px, 40vw, 500px)", filter: "saturate(0.88) contrast(1.02)" }}
+                    className={flow.imageFit === "contain" ? "max-h-full max-w-full object-contain block" : "w-full h-full object-cover"}
+                    style={
+                      flow.imageFit === "contain"
+                        ? { maxHeight: "78%", maxWidth: "78%" }
+                        : { filter: "saturate(0.88) contrast(1.02)" }
+                    }
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
+                  {flow.imageFit !== "contain" && (
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
+                  )}
                 </div>
                 <p className="text-xs text-muted-foreground text-center mb-12" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{flow.caption}</p>
 
