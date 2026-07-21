@@ -3,7 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
-import bumaHero from "figma:asset/adc54ee4-297f-4105-a87b-069ec7cff263.jpeg";
+import bumaHero from "../../../assets/images/Silver.png";
+import bumaFinalSolution from "../../../assets/images/HERO (2) (2).png";
 
 const DECISIONS = [
   {
@@ -127,14 +128,16 @@ export default function BumaCaseStudy() {
       {/* Cover image */}
       <FadeUp>
         <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}>
+          <div
+            className="relative rounded-2xl overflow-hidden bg-muted flex items-center justify-center p-8 sm:p-12 lg:p-16"
+            style={{ height: "clamp(320px, 50vw, 620px)", boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+          >
             <img
               src={bumaHero}
               alt="BUMA Awards music event atmosphere"
-              className="w-full object-cover"
-              style={{ height: "clamp(280px, 45vw, 560px)", objectPosition: "center" }}
+              className="max-h-full max-w-full object-contain block"
+              style={{ maxHeight: "90%", maxWidth: "90%" }}
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(212,130,26,0.20) 0%, rgba(28,26,23,0.30) 100%)" }} />
           </div>
         </div>
       </FadeUp>
@@ -236,14 +239,17 @@ export default function BumaCaseStudy() {
 
         {/* Single full-page image */}
         <FadeUp delay={0.05}>
-          <div className="relative rounded-2xl overflow-hidden bg-muted mb-5" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.16)" }}>
+          <div
+            className="relative rounded-2xl overflow-y-auto overscroll-contain bg-muted mb-5"
+            style={{ height: "clamp(420px, 65vw, 720px)", boxShadow: "0 32px 80px rgba(28,26,23,0.16)" }}
+            tabIndex={0}
+            aria-label="Scrollable preview of the final BUMA Awards landing page"
+          >
             <img
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1400&h=900&fit=crop&auto=format"
+              src={bumaFinalSolution}
               alt="Final redesigned BUMA Awards landing page"
-              className="w-full object-cover"
-              style={{ height: "clamp(360px, 55vw, 680px)", filter: "saturate(0.85) contrast(1.05)" }}
+              className="w-full h-auto block"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(28,26,23,0.25) 100%)" }} />
           </div>
           <p className="text-xs text-muted-foreground text-center mb-16" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
             Final redesigned BUMA Awards landing page complete user journey from event discovery to ticket purchase, voting, and sponsorship opportunities.
