@@ -4,6 +4,9 @@ import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import kycImage from "../../../assets/images/kyc.png";
+import sectionThreeImage from "../../../assets/images/Section 3.png";
+import mainImage from "../../../assets/images/tHE MAIN IMAGE.png";
+import onboardingImage from "../../../assets/images/create account (2).png";
 
 const DECISIONS = [
   {
@@ -63,7 +66,8 @@ const FLOW_SECTIONS = [
     id: "onboarding",
     label: "01 — Onboarding Flow",
     title: "Creating momentum from the first screen",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=700&fit=crop&auto=format",
+    image: onboardingImage,
+    imageFit: "contain" as const,
     imageAlt: "Mobile screens showing the Belong onboarding flow",
     caption: "Belong onboarding — Create Account → Verify Phone → Set PIN → Confirm PIN",
     annotations: [
@@ -94,7 +98,8 @@ const FLOW_SECTIONS = [
     id: "home",
     label: "03 — Home, Product & Portfolio",
     title: "From browsing to ownership",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=700&fit=crop&auto=format",
+    image: sectionThreeImage,
+    imageFit: "contain" as const,
     imageAlt: "Mobile screens showing the Belong home, product detail, and portfolio screens",
     caption: "Belong — Home Dashboard · Product Detail · Portfolio Overview",
     subsections: [
@@ -174,12 +179,10 @@ export default function BelongCaseStudy() {
         <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
           <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}>
             <img
-              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&h=700&fit=crop&auto=format"
+              src={mainImage}
               alt="Belong Investment App — overview"
-              className="w-full object-cover"
-              style={{ height: "clamp(280px, 45vw, 560px)", filter: "saturate(0.9) contrast(1.02)" }}
+              className="w-full object-contain h-auto block"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(107,143,113,0.18) 0%, rgba(212,130,26,0.08) 100%)" }} />
           </div>
         </div>
       </FadeUp>
@@ -293,14 +296,7 @@ export default function BelongCaseStudy() {
                 </div>
 
                 {/* Screen image */}
-                <div
-                  className={`relative overflow-hidden mb-4 ${flow.imageFit === "contain" ? "rounded-2xl" : "rounded-2xl bg-muted"}`}
-                  style={
-                    flow.imageFit === "contain"
-                      ? { backgroundColor: "#F5F0E8", boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }
-                      : { boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }
-                  }
-                >
+                <div className="relative rounded-2xl overflow-hidden bg-muted mb-4" style={{ boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }}>
                   <img
                     src={flow.image}
                     alt={flow.imageAlt}
