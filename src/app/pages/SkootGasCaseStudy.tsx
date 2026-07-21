@@ -3,6 +3,11 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import skootGasCoverImage from "../../../assets/images/Blue.png";
+import dashboardImage from "../../../assets/images/iPhone-13-Pro-Front.png";
+import checkoutImage from "../../../assets/images/iPhone-13-Pro-Front (1).png";
+import orderManagementImage from "../../../assets/images/Blue (1).png";
+import trackingImage from "../../../assets/images/tracking.png";
 
 const DECISIONS = [
   {
@@ -62,7 +67,8 @@ const FLOW_SECTIONS = [
     id: "dashboard",
     label: "01 — Smart Home Dashboard",
     title: "Understanding gas status at a glance",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=700&fit=crop&auto=format",
+    image: dashboardImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Gas home dashboard showing gas level monitoring",
     caption: "Skoot Gas — Home Dashboard with real-time gas level visualisation and refill recommendation",
     annotations: [
@@ -77,7 +83,8 @@ const FLOW_SECTIONS = [
     id: "checkout",
     label: "02 — Checkout Experience",
     title: "From decision to order in under 30 seconds",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=700&fit=crop&auto=format",
+    image: checkoutImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Gas checkout screen with pre-filled delivery information",
     caption: "Skoot Gas — Streamlined checkout with pre-filled address, phone, and transparent pricing",
     annotations: [
@@ -92,7 +99,8 @@ const FLOW_SECTIONS = [
     id: "orders",
     label: "03 — Order Management",
     title: "Every order, always visible",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=700&fit=crop&auto=format",
+    image: orderManagementImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Gas orders screen showing ongoing and completed orders",
     caption: "Skoot Gas — Orders screen with Ongoing and Completed tabs, ETA visibility, and Track Order CTA",
     annotations: [
@@ -107,7 +115,8 @@ const FLOW_SECTIONS = [
     id: "tracking",
     label: "04 — Live Order Tracking",
     title: "Turning waiting into watching",
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&h=700&fit=crop&auto=format",
+    image: trackingImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Gas live order tracking screen with delivery milestone timeline",
     caption: "Skoot Gas — Live tracking with named delivery milestones, rider updates, and progress timeline",
     annotations: [
@@ -122,7 +131,8 @@ const FLOW_SECTIONS = [
     id: "wallet",
     label: "05 — Wallet & Payments",
     title: "Making repeat purchases feel effortless",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=700&fit=crop&auto=format",
+    image: orderManagementImage,
+    imageFit: "contain" as const,
     imageAlt: "Skoot Gas wallet screen showing balance, top-up, and transaction history",
     caption: "Skoot Gas — Wallet with available balance, top-up action, and transparent transaction history",
     annotations: [
@@ -190,14 +200,15 @@ export default function SkootGasCaseStudy() {
       {/* Cover image */}
       <FadeUp>
         <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}>
+          <div
+            className="relative rounded-2xl overflow-hidden bg-muted flex items-center justify-center p-6 lg:p-10"
+            style={{ height: "clamp(360px, 55vw, 600px)", boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+          >
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&h=700&fit=crop&auto=format"
+              src={skootGasCoverImage}
               alt="Skoot Gas — on-demand gas delivery app overview"
-              className="w-full object-cover"
-              style={{ height: "clamp(280px, 45vw, 560px)", filter: "saturate(0.88) contrast(1.03)" }}
+              className="h-full w-auto max-w-full object-contain block"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(212,130,26,0.15) 0%, rgba(107,143,113,0.08) 100%)" }} />
           </div>
         </div>
       </FadeUp>
@@ -315,10 +326,12 @@ export default function SkootGasCaseStudy() {
                   <img
                     src={flow.image}
                     alt={flow.imageAlt}
-                    className="w-full object-cover"
-                    style={{ height: "clamp(220px, 40vw, 500px)", filter: "saturate(0.88) contrast(1.02)" }}
+                    className={`w-full ${flow.imageFit === "contain" ? "object-contain" : "object-cover"}`}
+                    style={{ height: "clamp(220px, 40vw, 500px)", ...(flow.imageFit === "contain" ? {} : { filter: "saturate(0.88) contrast(1.02)" }) }}
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
+                  {flow.imageFit !== "contain" && (
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
+                  )}
                 </div>
                 <p className="text-xs text-muted-foreground text-center mb-12" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{flow.caption}</p>
 
