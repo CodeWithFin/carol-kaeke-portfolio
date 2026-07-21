@@ -1,0 +1,99 @@
+PROMPT
+
+Design a modern, premium, interactive landing page for a Product Designer's portfolio. The tone should feel confident, editorial, and human — not templated or generic "designer portfolio" boilerplate. Think of it as sitting somewhere between a fintech product's design language and an art-directed editorial site: warm, tactile, precise.
+
+Brand & Visual Direction
+
+
+Palette: Warm paper/off-white background (not pure white), deep charcoal/ink for primary text, sage-green as the primary accent, marigold/amber as a secondary accent used sparingly for CTAs and highlights. Avoid anything that reads as generic "tech blue."
+Typography: Serif display font (Fraunces or similar high-contrast, characterful serif) for headlines and section titles; clean grotesque sans (Inter or similar) for body copy and UI labels; monospace (IBM Plex Mono) for metadata, tags, numbers, and small labels (e.g. "01 —", "Fintech", "3 Months") to give it a systems/product feel.
+Grid: Generous whitespace, consistent 8px/4px spacing rhythm, strong left-aligned type hierarchy. Editorial magazine-style layout rather than centered "hero + boxes."
+Micro-interactions: Subtle hover states (underline draws in, slight scale on cards, arrow icons that shift on hover), smooth scroll-triggered fade/slide-ins as sections enter viewport, cursor-aware or magnetic hover on primary CTAs. Nothing gimmicky — restrained, premium motion only.
+Imagery: Hero portrait/photo treated with a subtle warm duotone or soft-edge mask to match the palette, not a stock-photo drop-shadow card.
+
+
+Global Navigation
+
+Sticky/fixed top nav, transparent-to-solid on scroll.
+
+
+Left: Logo/wordmark (Caroline Kaeke or initials mark)
+Center or right-aligned nav links: About · Case Studies · Experience
+Right: "Resume ↗" as a secondary/outlined button (opens in new tab), "Contact" as a solid primary CTA button
+Mobile: collapses into a clean hamburger/slide-out menu
+
+
+Hero Section
+
+Two-column layout (text left ~55%, image right ~45%), stacking on mobile.
+
+
+Small monospace eyebrow label (optional, e.g. "PRODUCT DESIGNER")
+Large serif headline: Caroline Kaeke
+Subhead (medium weight, larger serif or sans): "Designing digital products that simplify complex experiences across fintech, mobility, and digital platforms."
+Supporting paragraph (sans, muted charcoal): "I design user-centered products that balance business goals with intuitive experiences—from investment platforms and on-demand services to mobility solutions and digital experiences."
+Right column: warm-toned portrait image with subtle organic shape or soft mask behind it (sage or marigold blob/gradient), not a hard rectangle
+CTA row: View My Work (solid primary, sage or marigold fill) + Download Resume (outlined/ghost secondary) with a small download icon
+
+
+Featured Work Section
+
+Section header: "Featured Work" (small monospace label) + optional supporting line.
+Four case study cards/rows, each following this exact structure, laid out as large editorial blocks (not small grid tiles — think full-width or half-width rows with lots of breathing room):
+
+
+Numbered index in monospace (01 —, 02 —, 03 —, 04 —) paired with the project name as a large serif heading
+Metadata row in small caps/monospace: Industry · Status (if present) · Timeline · Role — displayed as inline tags or a clean label/value grid
+Overview paragraph in sans-serif, comfortable reading width (~60-70 characters per line)
+Focus Areas: displayed as small pill/chip tags in monospace, not a plain comma list
+"View Case Study →" as a text-link CTA with animated arrow on hover, or a full-card-is-clickable pattern with a hover state that reveals a subtle background shift or image preview
+
+
+Cards for the 4 projects:
+
+
+Belong Investment App — Fintech / In Development / Product Designer / 3 Months / Focus: Investment onboarding, Portfolio management, KYC, Payments, Dashboard
+Skoot Gas — On-demand Delivery / Product Designer / 1 Week Design Sprint / Focus: Ordering, Delivery Tracking, Wallet, Payments, Customer Experience
+Skoot Ride — Mobility / Product Designer / 1 Week Design Sprint / Focus: Lease Application, KYC, Payments, Battery Charging, Dashboard
+Buma Awards Redesign — Entertainment / Product Design Intern / 3 Months / Focus: Information Architecture, Navigation, Responsive Design, Accessibility, Content Discovery
+
+
+What I Bring Section
+
+Editorial, confident, slightly asymmetric layout — not a plain centered text block.
+
+
+Large serif statement headline: "Your next product deserves thoughtful design that solves real user problems."
+Supporting paragraph in sans-serif, medium column width: "I design intuitive digital experiences that balance user needs with business goals. From fintech platforms and mobility solutions to digital products that improve everyday services, I enjoy transforming complex workflows into simple, accessible experiences that people trust. Whether collaborating with a growing startup or an established team, I bring curiosity, systems thinking, and a user-centered approach to every stage of the design process."
+Two left-aligned text CTAs side by side (not buttons — text links with arrows, understated): "Explore My Work →" and "Start a Conversation →"
+
+
+Closing Line (above footer)
+
+Centered or left-aligned, warm and human, slightly smaller/muted type, on its own breathing-room section directly above the footer:
+"Currently available for freelance projects, contract roles, and full-time Product Design opportunities."
+(Consider a small status-dot or subtle pulse indicator next to this line to reinforce "available now" — optional, tasteful, not gimmicky.)
+
+Footer
+
+Simple, minimal, dark or deep charcoal background to close the page with contrast against the warm paper tone above it.
+
+
+© 2026 Caroline Kaeke.
+Links: Start a Conversation · Download CV · LinkedIn
+Optional: small back-to-top arrow
+
+
+Interactivity Requirements
+
+
+Smooth scroll navigation from nav links to sections
+Scroll-triggered entrance animations (fade + slight upward slide) for hero, each case study card, and the "What I Bring" section — staggered timing
+Hover states on all interactive elements: buttons scale/shift subtly, links underline-draw, case study cards lift or reveal accent color on hover
+Nav bar transitions from transparent to solid/blurred background on scroll
+Responsive across desktop, tablet, and mobile with the two-column hero stacking cleanly on smaller screens
+
+
+Overall Feel
+
+Premium, editorial, warm, and precise — like a well-designed fintech product met a design studio's own site. Confident typography, restrained color use, purposeful motion. Should feel like it was designed by someone who deeply understands both product UX and brand craft.
