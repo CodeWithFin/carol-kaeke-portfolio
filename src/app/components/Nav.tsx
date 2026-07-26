@@ -12,19 +12,25 @@ const NAV_LINKS = [
 export function Nav({
   variant = "portfolio",
   onBack,
+  overDark = false,
 }: {
   variant?: "portfolio" | "case-study";
   onBack?: () => void;
+  overDark?: boolean;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollY = useScrollY();
   const solid = scrollY > 60;
+  const light = overDark && !solid;
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
+
+  const ink = light ? "rgba(245,240,232,0.92)" : undefined;
+  const inkMuted = light ? "rgba(245,240,232,0.7)" : undefined;
 
   return (
     <>
@@ -41,8 +47,8 @@ export function Nav({
           {variant === "case-study" ? (
             <button
               onClick={onBack}
-              className="font-serif text-foreground text-lg font-medium tracking-tight hover:opacity-70 transition-opacity flex items-center gap-2"
-              style={{ fontFamily: "'Fraunces', serif" }}
+              className="font-serif text-lg font-medium tracking-tight hover:opacity-70 transition-opacity flex items-center gap-2"
+              style={{ fontFamily: "'Fraunces', serif", color: ink ?? "var(--foreground)" }}
             >
               <span className="text-base">←</span> CK
             </button>
@@ -77,8 +83,12 @@ export function Nav({
               href={resumePDF}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground border border-foreground/25 hover:border-foreground/60 px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-sm font-medium px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 border"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                color: inkMuted ?? "rgba(28,26,23,0.7)",
+                borderColor: light ? "rgba(245,240,232,0.3)" : "rgba(28,26,23,0.25)",
+              }}
             >
               Resume <ArrowUpRight size={13} strokeWidth={2} />
             </a>
@@ -92,7 +102,8 @@ export function Nav({
           </div>
 
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden"
+            style={{ color: ink ?? "var(--foreground)" }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -120,6 +131,15 @@ export function Nav({
               {l.label}
             </button>
           ))}
+          {variant === "case-study" && (
+            <button
+              onClick={() => { setMenuOpen(false); onBack?.(); }}
+              className="text-left text-3xl font-medium text-foreground"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              ← Back to portfolio
+            </button>
+          )}
           <div className="flex flex-col gap-4 mt-4">
             <a
               href={resumePDF}
