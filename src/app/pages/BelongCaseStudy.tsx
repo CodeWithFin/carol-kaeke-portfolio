@@ -3,10 +3,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { CaseStudyHero } from "../components/CaseStudyHero";
 import kycImage from "../../../assets/images/kyc.png";
 import sectionThreeImage from "../../../assets/images/Section 3.png";
 import mainImage from "../../../assets/images/tHE MAIN IMAGE.png";
 import onboardingImage from "../../../assets/images/create account (2).png";
+import belongCover from "../../../assets/images/belong-card-image.jpeg";
 
 const DECISIONS = [
   {
@@ -127,36 +129,35 @@ export default function BelongCaseStudy() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Nav variant="case-study" onBack={() => navigate("/")} />
+      <Nav variant="case-study" overDark onBack={() => navigate("/")} />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <CaseStudyHero
+        image={belongCover}
+        title="Belong Investment App"
+        subtitle="Fintech · Mobile App"
+        accent="#6b8f71"
+      />
+
+      {/* Overview */}
+      <section className="pt-16 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
         <FadeUp>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs text-muted-foreground tracking-widest" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>CASE STUDY · 01</span>
-            <span className="text-xs text-muted-foreground/40" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>—</span>
-            <span className="text-xs text-primary" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>Fintech · 3 Months · Product Designer</span>
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.07}>
-          <h1
-            className="text-[clamp(2.75rem,6vw,5.5rem)] font-normal leading-[1.05] text-foreground tracking-tight mb-8 max-w-4xl"
+          <h2
+            className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal leading-[1.15] text-foreground tracking-tight mb-6 max-w-3xl"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Belong — Making investing feel like a{" "}
+            Making investing feel like a{" "}
             <span className="italic font-light">lifestyle</span>, not a lesson.
-          </h1>
+          </h2>
         </FadeUp>
 
-        <FadeUp delay={0.12}>
+        <FadeUp delay={0.08}>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
             Belong is a fintech mobile application that helps young Africans start building wealth by making investment products feel approachable and familiar — organised like music playlists rather than financial instruments. I designed the end-to-end experience across onboarding, KYC, the home dashboard, product detail pages, and portfolio management.
           </p>
         </FadeUp>
 
         {/* Meta strip */}
-        <FadeUp delay={0.16}>
+        <FadeUp delay={0.12}>
           <div className="flex flex-wrap gap-x-10 gap-y-4 mt-12 pt-10 border-t border-border">
             {[
               { label: "ROLE", value: "Product Designer" },
