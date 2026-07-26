@@ -3,8 +3,10 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { CaseStudyHero } from "../components/CaseStudyHero";
 import bumaHero from "../../../assets/images/Silver.png";
 import bumaFinalSolution from "../../../assets/images/HERO (2) (2).png";
+import bumaCardImage from "../../../assets/images/buma-card-image.jpeg";
 
 const DECISIONS = [
   {
@@ -68,37 +70,36 @@ export default function BumaCaseStudy() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Nav variant="case-study" onBack={() => navigate("/")} />
+      <Nav variant="case-study" overDark onBack={() => navigate("/")} />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <CaseStudyHero
+        image={bumaCardImage}
+        title="Buma Awards Redesign"
+        subtitle="Entertainment · Web Platform"
+        accent="#d4821a"
+      />
+
+      {/* Overview */}
+      <section className="pt-16 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
         <FadeUp>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs text-muted-foreground tracking-widest" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>CASE STUDY · 04</span>
-            <span className="text-xs text-muted-foreground/40" style={{ fontFamily: "'IBM Plex Mono', monospace" }}></span>
-            <span className="text-xs text-accent" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>Entertainment · 3 Months · Product Design Intern</span>
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.07}>
-          <h1
-            className="text-[clamp(2.75rem,6vw,5.5rem)] font-normal leading-[1.05] text-foreground tracking-tight mb-8 max-w-4xl"
+          <h2
+            className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal leading-[1.15] text-foreground tracking-tight mb-6 max-w-3xl"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            BUMA Awards Redesigning a music{" "}
+            Redesigning a music{" "}
             <span className="italic font-light">celebration</span>{" "}
             into a digital destination.
-          </h1>
+          </h2>
         </FadeUp>
 
-        <FadeUp delay={0.12}>
+        <FadeUp delay={0.08}>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
             BUMA (Beacon Urban Music Awards) is an annual platform celebrating excellence in urban music. The website serves fans, nominees, artists, sponsors, media, and event attendees each with a distinct goal. The redesign transformed a fragmented, low-energy digital presence into a premium destination that promotes the awards, drives voting, increases ticket sales, showcases performances, and attracts sponsors. I redesigned the complete landing page from hero to footer.
           </p>
         </FadeUp>
 
         {/* Scope chips */}
-        <FadeUp delay={0.16}>
+        <FadeUp delay={0.12}>
           <div className="flex flex-wrap gap-2 mt-8 mb-12">
             {["Hero", "Countdown", "Event Overview", "Nominees", "Spotlight Moments", "Latest News", "Sponsors", "About BUMA", "Footer"].map((s) => (
               <span key={s} className="text-xs px-3 py-1 rounded-full border border-border text-muted-foreground" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{s}</span>
@@ -107,7 +108,7 @@ export default function BumaCaseStudy() {
         </FadeUp>
 
         {/* Meta strip */}
-        <FadeUp delay={0.18}>
+        <FadeUp delay={0.14}>
           <div className="flex flex-wrap gap-x-10 gap-y-4 pt-10 border-t border-border">
             {[
               { label: "ROLE", value: "Product Design Intern" },
