@@ -3,11 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { CaseStudyHero } from "../components/CaseStudyHero";
 import skootGasCoverImage from "../../../assets/images/Blue.png";
 import dashboardImage from "../../../assets/images/iPhone-13-Pro-Front.png";
 import checkoutImage from "../../../assets/images/iPhone-13-Pro-Front (1).png";
 import orderManagementImage from "../../../assets/images/Blue (1).png";
 import trackingImage from "../../../assets/images/tracking.png";
+import skootGasCardImage from "../../../assets/images/skoot-card-image.jpeg";
 
 const DECISIONS = [
   {
@@ -150,36 +152,35 @@ export default function SkootGasCaseStudy() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Nav variant="case-study" onBack={() => navigate("/")} />
+      <Nav variant="case-study" overDark onBack={() => navigate("/")} />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <CaseStudyHero
+        image={skootGasCardImage}
+        title="Skoot Gas"
+        subtitle="On-demand Delivery · Mobile App"
+        accent="#d4821a"
+      />
+
+      {/* Overview */}
+      <section className="pt-16 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
         <FadeUp>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs text-muted-foreground tracking-widest" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>CASE STUDY · 02</span>
-            <span className="text-xs text-muted-foreground/40" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>—</span>
-            <span className="text-xs text-accent" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>On-demand Delivery · 1 Week Design Sprint · Product Designer</span>
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.07}>
-          <h1
-            className="text-[clamp(2.75rem,6vw,5.5rem)] font-normal leading-[1.05] text-foreground tracking-tight mb-8 max-w-4xl"
+          <h2
+            className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal leading-[1.15] text-foreground tracking-tight mb-6 max-w-3xl"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Skoot Gas — You should never have to wonder if you&apos;ll run out of{" "}
+            You should never have to wonder if you&apos;ll run out of{" "}
             <span className="italic font-light">gas.</span>
-          </h1>
+          </h2>
         </FadeUp>
 
-        <FadeUp delay={0.12}>
+        <FadeUp delay={0.08}>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
             Skoot Gas is an on-demand gas delivery platform that connects households with trusted suppliers for fast doorstep refills. The core promise — you never run out of gas — required combining IoT-powered monitoring, predictive alerts, live order tracking, and digital payments into one seamless mobile experience. I designed the end-to-end flow across the home dashboard, checkout, order management, live tracking, and wallet.
           </p>
         </FadeUp>
 
         {/* Meta strip */}
-        <FadeUp delay={0.16}>
+        <FadeUp delay={0.12}>
           <div className="flex flex-wrap gap-x-10 gap-y-4 mt-12 pt-10 border-t border-border">
             {[
               { label: "ROLE", value: "Product Designer" },
