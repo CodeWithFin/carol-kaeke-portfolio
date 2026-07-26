@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Download, ArrowUpRight, ArrowRight, ChevronUp } from "lucide-react";
-import { FadeUp, useScrollY } from "../lib/shared";
+import { Download, ArrowRight } from "lucide-react";
+import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import resumePDF from "../../imports/Caroline_Kaeke-Resume-UI_UX.docx.pdf?url";
 import caroHeroImage from "../../../assets/images/caro-face-card.jpeg";
+import belongCover from "../../../assets/images/belong-card-image.jpeg";
+import skootGasCover from "../../../assets/images/skoot-card-image.jpeg";
+import skootRideCover from "../../../assets/images/skoot-ride-card-image.jpeg";
+import bumaCover from "../../../assets/images/buma-card-image.jpeg";
 
 const PROJECTS = [
   {
     index: "01",
     title: "Belong Investment App",
+    tag: "Fintech • Investment App",
     industry: "Fintech",
     status: "In Development",
     timeline: "3 Months",
@@ -19,11 +24,15 @@ const PROJECTS = [
       "A comprehensive investment platform designed to democratize wealth building for young professionals. The app simplifies complex financial concepts and provides an intuitive onboarding experience tailored to first-time investors.",
     focusAreas: ["Investment Onboarding", "Portfolio Management", "KYC", "Payments", "Dashboard"],
     color: "#6b8f71",
+    imageBg: "#dfe8df",
+    image: belongCover,
+    imageFit: "cover" as const,
     slug: "belong",
   },
   {
     index: "02",
     title: "Skoot Gas",
+    tag: "On-demand • Fuel Delivery",
     industry: "On-demand Delivery",
     status: null,
     timeline: "1 Week Design Sprint",
@@ -32,11 +41,15 @@ const PROJECTS = [
       "A rapid design sprint for an on-demand fuel delivery service that brings gasoline directly to customers' vehicles. The experience required careful consideration of safety protocols while maintaining a seamless user journey.",
     focusAreas: ["Ordering", "Delivery Tracking", "Wallet", "Payments", "Customer Experience"],
     color: "#d4821a",
+    imageBg: "#e4ebe8",
+    image: skootGasCover,
+    imageFit: "cover" as const,
     slug: "skoot-gas",
   },
   {
     index: "03",
     title: "Skoot Ride",
+    tag: "Mobility • EV Leasing",
     industry: "Mobility",
     status: null,
     timeline: "1 Week Design Sprint",
@@ -45,11 +58,15 @@ const PROJECTS = [
       "A mobility solution for electric moped leasing, designed to make urban transportation accessible and sustainable. The platform handles everything from application to daily usage tracking and payments.",
     focusAreas: ["Lease Application", "KYC", "Payments", "Battery Charging", "Dashboard"],
     color: "#6b8f71",
+    imageBg: "#e8e4d8",
+    image: skootRideCover,
+    imageFit: "cover" as const,
     slug: "skoot-ride",
   },
   {
     index: "04",
     title: "Buma Awards Redesign",
+    tag: "Entertainment • Awards Platform",
     industry: "Entertainment",
     status: null,
     timeline: "3 Months",
@@ -58,6 +75,9 @@ const PROJECTS = [
       "A complete redesign of the Buma Awards digital platform, focusing on improving content discovery and accessibility for music industry professionals and fans alike.",
     focusAreas: ["Information Architecture", "Navigation", "Responsive Design", "Accessibility", "Content Discovery"],
     color: "#d4821a",
+    imageBg: "#e6e0d4",
+    image: bumaCover,
+    imageFit: "cover" as const,
     slug: "buma-awards",
   },
 ];
@@ -149,56 +169,83 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
     <article
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border-t border-border pt-10 pb-12"
+      onClick={handleCTA}
+      className={`group h-full flex flex-col overflow-hidden rounded-2xl bg-card border border-border/60 transition-all duration-400 ${
+        project.slug ? "cursor-pointer hover:-translate-y-1 hover:border-border" : "cursor-default"
+      }`}
+      style={{
+        boxShadow: hovered ? "0 18px 40px rgba(28,26,23,0.08)" : "0 4px 16px rgba(28,26,23,0.03)",
+      }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-16">
-        <div>
-          <div className="text-xs text-muted-foreground mb-3" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
-            {project.index} —
-          </div>
-          <h3
-            className="text-3xl lg:text-4xl font-normal leading-tight text-foreground transition-colors duration-250"
-            style={{ fontFamily: "'Fraunces', serif", color: hovered ? project.color : undefined }}
-          >
-            {project.title}
-          </h3>
+      <div
+        className="relative aspect-[4/3] shrink-0 overflow-hidden"
+        style={{ backgroundColor: project.imageBg }}
+      >
+        <img
+          src={project.image}
+          alt={`${project.title} mockup`}
+          className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-out ${
+            project.imageFit === "cover" ? "object-cover object-center" : "object-contain p-6 lg:p-8"
+          }`}
+          style={{ transform: hovered ? "scale(1.04)" : "scale(1)" }}
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col p-6 lg:p-8">
+        <span
+          className="text-[11px] tracking-[0.14em] uppercase mb-3"
+          style={{ fontFamily: "'IBM Plex Mono', monospace", color: project.color }}
+        >
+          {project.tag}
+        </span>
+
+        <h3
+          className="text-2xl lg:text-3xl font-normal leading-tight text-foreground mb-2 min-h-[2.5em] transition-colors duration-250"
+          style={{ fontFamily: "'Fraunces', serif" }}
+        >
+          {project.title}
+        </h3>
+
+        <div
+          className="text-[11px] tracking-[0.12em] uppercase text-muted-foreground mb-4 min-h-[1.25em]"
+          style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+        >
+          {project.role}
+          {project.status && (
+            <>
+              <span className="mx-2 opacity-40">·</span>
+              {project.status}
+            </>
+          )}
         </div>
 
-        <div>
-          <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-5 text-xs text-muted-foreground" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
-            <span>{project.industry}</span>
-            {project.status && <><span className="opacity-40">·</span><span>{project.status}</span></>}
-            <span className="opacity-40">·</span>
-            <span>{project.timeline}</span>
-            <span className="opacity-40">·</span>
-            <span>{project.role}</span>
-          </div>
+        <p
+          className="text-sm text-foreground/70 leading-relaxed mb-8 flex-1 line-clamp-4"
+          style={{ fontFamily: "'Inter', sans-serif" }}
+        >
+          {project.overview}
+        </p>
 
-          <p className="text-base text-foreground/75 leading-relaxed mb-6 max-w-[60ch]" style={{ fontFamily: "'Inter', sans-serif" }}>
-            {project.overview}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.focusAreas.map((area) => (
-              <span key={area} className="text-xs px-3 py-1 rounded-full border border-border text-muted-foreground" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
-                {area}
-              </span>
-            ))}
-          </div>
-
-          <button
-            onClick={handleCTA}
-            className={`inline-flex items-center gap-2 text-sm font-medium text-foreground ${!project.slug ? "opacity-40 cursor-default" : "cursor-pointer"}`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
-            disabled={!project.slug}
-          >
-            <span className="relative">
-              View Case Study
-              <span className="absolute -bottom-0.5 left-0 h-px bg-foreground transition-all duration-300" style={{ width: hovered && project.slug ? "100%" : "0%" }} />
-            </span>
-            <ArrowRight size={14} style={{ transform: hovered && project.slug ? "translateX(4px)" : "translateX(0)", transition: "transform 0.25s ease" }} />
-          </button>
-        </div>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleCTA();
+          }}
+          className={`inline-flex items-center gap-2 text-[11px] tracking-[0.14em] uppercase font-medium mt-auto ${
+            !project.slug ? "opacity-40 cursor-default" : "cursor-pointer"
+          }`}
+          style={{ fontFamily: "'IBM Plex Mono', monospace", color: project.color }}
+          disabled={!project.slug}
+        >
+          View Full Case Study
+          <ArrowRight
+            size={13}
+            style={{
+              transform: hovered && project.slug ? "translateX(4px)" : "translateX(0)",
+              transition: "transform 0.25s ease",
+            }}
+          />
+        </button>
       </div>
     </article>
   );
@@ -309,16 +356,18 @@ export default function Portfolio() {
       {/* Featured Work */}
       <section id="work" className="px-6 lg:px-12 max-w-7xl mx-auto py-24 lg:py-32">
         <FadeUp>
-          <div className="flex items-baseline gap-4 mb-16">
+          <div className="flex items-baseline gap-4 mb-14">
             <span className="text-xs text-muted-foreground tracking-widest" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>FEATURED WORK</span>
             <div className="flex-1 h-px bg-border" />
           </div>
         </FadeUp>
-        {PROJECTS.map((project, i) => (
-          <FadeUp key={project.index} delay={i * 0.1}>
-            <ProjectCard project={project} />
-          </FadeUp>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {PROJECTS.map((project, i) => (
+            <FadeUp key={project.index} delay={i * 0.08} className="h-full">
+              <ProjectCard project={project} />
+            </FadeUp>
+          ))}
+        </div>
       </section>
 
       {/* About */}
