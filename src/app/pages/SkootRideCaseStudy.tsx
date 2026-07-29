@@ -4,12 +4,9 @@ import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { CaseStudyHero } from "../components/CaseStudyHero";
-import skootRideCoverImage from "../../../assets/images/iPhone-13-Pro-Front-4.png";
-import leaseSelectionImage from "../../../assets/images/iPhone-13-Pro-Front-3.png";
-import vehicleSelectionImage from "../../../assets/images/iPhone-13-Pro-Front-1.png";
-import identityVerificationImage from "../../../assets/images/iPhone-13-Pro-Front-2.png";
-import walletImage from "../../../assets/images/iPhone-13-Pro-Front (2).png";
 import skootRideCardImage from "../../../assets/images/skoot-ride-card-image.jpeg";
+import skootRideImage1 from "../../../assets/project-images/skoot-ride-1.jpeg";
+import skootRideImage2 from "../../../assets/project-images/skoot-ride-2.jpeg";
 
 const DECISIONS = [
   {
@@ -69,10 +66,6 @@ const FLOW_SECTIONS = [
     id: "lease-selection",
     label: "01 — Lease Selection",
     title: "Removing the anxiety of a financial choice",
-    image: leaseSelectionImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride lease selection screen showing Standard Lease and Lease-to-Own options",
-    caption: "Skoot Ride — Choose Lease Type with recommended badge, benefit comparison, and Continue CTA",
     annotations: [
       { label: "Two-option comparison", body: "Presenting exactly two lease options removes the cognitive overhead of evaluating a long list. The user's job becomes a binary comparison, not an open-ended search." },
       { label: "Recommendation badge", body: "A 'Most Popular' badge on the Lease-to-Own option provides social proof and a clear default for undecided users — they can choose it with confidence without needing to understand every detail of the alternative." },
@@ -85,10 +78,6 @@ const FLOW_SECTIONS = [
     id: "vehicle-selection",
     label: "02 — Vehicle Selection",
     title: "Making the right vehicle feel obvious",
-    image: vehicleSelectionImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride vehicle selection screen showing tuk-tuk and e-bike options with pricing",
-    caption: "Skoot Ride — Choose Vehicle with category filters, vehicle cards, lease pricing, and Select Vehicle CTA",
     annotations: [
       { label: "Category filters", body: "Tabs filtering by vehicle type (All / Tuk-Tuk / E-Bike) allow users who already know what they want to reduce the list in one tap. Users who are undecided can browse the full catalogue." },
       { label: "Pricing on browse", body: "The weekly lease rate is visible on each vehicle card — not hidden until after selection. Users can make a financially informed shortlist without needing to tap into each vehicle's detail page." },
@@ -101,10 +90,6 @@ const FLOW_SECTIONS = [
     id: "kyc",
     label: "03 — Identity Verification",
     title: "No surprises, no abandoned applications",
-    image: identityVerificationImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride identity verification screen showing document checklist and upload states",
-    caption: "Skoot Ride — Verify Identity with required document list, upload progress indicators, and Submit CTA",
     annotations: [
       { label: "Document checklist upfront", body: "The complete list of required documents is shown before the user begins uploading. Users can check they have everything available before starting — eliminating mid-flow exits to retrieve missing documents." },
       { label: "Per-document progress states", body: "Each document has its own status indicator (Not Uploaded → Uploading → Uploaded ✓). Users can see at a glance which documents are complete and which remain — supporting partial completion and return visits." },
@@ -117,10 +102,6 @@ const FLOW_SECTIONS = [
     id: "dashboard",
     label: "04 — Lease Dashboard & Application Status",
     title: "Always knowing where you stand",
-    image: leaseSelectionImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride lease dashboard showing application status, lease overview, and quick actions",
-    caption: "Skoot Ride — Lease Dashboard across Application Review, Approved, Active, Warning, and Immobilised states",
     annotations: [
       { label: "Status-first layout", body: "The lease state is communicated in the first card a user sees — colour-coded and labelled in plain language. Under Review, Approved, Active, Payment Due, and Immobilised each have distinct visual treatments so the state is scannable in under two seconds." },
       { label: "Contextual alert banners", body: "Time-sensitive states (missed payment, immobilisation warning) trigger a prominent banner at the top of the screen, ensuring riders see critical information without needing to scroll. Banners are dismissible once the user acknowledges the action required." },
@@ -133,10 +114,6 @@ const FLOW_SECTIONS = [
     id: "charging",
     label: "05 — Charging Experience",
     title: "Making charging feel in control, not opaque",
-    image: skootRideCoverImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride charging screen showing session duration, energy usage, and stop charging action",
-    caption: "Skoot Ride — Charging Session with live duration, energy consumption, progress indicator, and Stop Charging CTA",
     annotations: [
       { label: "Session duration display", body: "Elapsed time and estimated completion time are both shown — 'Charging for 24 min · Est. 1h 10min remaining'. Showing both eliminates the anxiety of not knowing how long the session will take." },
       { label: "Live energy consumption", body: "kWh consumed updates in real time during the session. For riders who pay per unit of energy, this provides financial transparency alongside operational awareness." },
@@ -149,10 +126,6 @@ const FLOW_SECTIONS = [
     id: "wallet",
     label: "06 — Wallet & Payments",
     title: "Financial clarity for riders managing a lease",
-    image: walletImage,
-    imageFit: "contain" as const,
-    imageAlt: "Skoot Ride wallet screen showing balance, transaction history, and top-up action",
-    caption: "Skoot Ride — Wallet with available balance, categorised transaction history, and Top Up CTA",
     annotations: [
       { label: "Balance prominence", body: "Available wallet balance is the dominant element on the screen — not a secondary figure beneath a graph or buried in settings. Riders need to know at a glance whether they can cover their next lease payment." },
       { label: "Categorised transaction history", body: "Transactions are categorised (Lease Payments / Top-ups / Charging) so riders can quickly audit their spending without scrolling through a mixed-purpose ledger. Each entry shows date, category, and amount." },
@@ -213,23 +186,6 @@ export default function SkootRideCaseStudy() {
           </div>
         </FadeUp>
       </section>
-
-      {/* Cover image */}
-      <FadeUp>
-        <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div
-            className="relative rounded-2xl overflow-hidden bg-muted flex items-center justify-center p-8 sm:p-12 lg:p-16"
-            style={{ height: "clamp(360px, 55vw, 600px)", boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
-          >
-            <img
-              src={skootRideCoverImage}
-              alt="Skoot Ride — electric mobility leasing platform"
-              className="max-h-full max-w-full object-contain block"
-              style={{ maxHeight: "78%" }}
-            />
-          </div>
-        </div>
-      </FadeUp>
 
       {/* Problem Context */}
       <section className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
@@ -327,6 +283,26 @@ export default function SkootRideCaseStudy() {
           </div>
         </FadeUp>
 
+        <div className="space-y-8 mb-28">
+          {[
+            { src: skootRideImage1, alt: "Skoot Ride — product screens overview" },
+            { src: skootRideImage2, alt: "Skoot Ride — key flows and screens" },
+          ].map((img, i) => (
+            <FadeUp key={img.alt} delay={i * 0.08}>
+              <div
+                className="relative rounded-2xl overflow-hidden bg-muted"
+                style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full object-contain h-auto block"
+                />
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
         <div className="space-y-28">
           {FLOW_SECTIONS.map((flow) => (
             <FadeUp key={flow.id}>
@@ -335,23 +311,6 @@ export default function SkootRideCaseStudy() {
                   <div className="text-xs text-muted-foreground mb-3" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{flow.label}</div>
                   <h3 className="text-3xl lg:text-4xl font-normal text-foreground" style={{ fontFamily: "'Fraunces', serif" }}>{flow.title}</h3>
                 </div>
-
-                <div className="relative rounded-2xl overflow-hidden bg-muted mb-4 flex items-center justify-center" style={{ height: "clamp(280px, 42vw, 520px)", boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }}>
-                  <img
-                    src={flow.image}
-                    alt={flow.imageAlt}
-                    className={flow.imageFit === "contain" ? "max-h-full max-w-full object-contain block" : "w-full h-full object-cover"}
-                    style={
-                      flow.imageFit === "contain"
-                        ? { maxHeight: "78%", maxWidth: "78%" }
-                        : { filter: "saturate(0.88) contrast(1.02)" }
-                    }
-                  />
-                  {flow.imageFit !== "contain" && (
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
-                  )}
-                </div>
-                <p className="text-xs text-muted-foreground text-center mb-12" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{flow.caption}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {flow.annotations.map((a) => (
