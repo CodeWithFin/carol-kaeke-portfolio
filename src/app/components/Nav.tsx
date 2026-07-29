@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useScrollY } from "../lib/shared";
 import resumePDF from "../../../assets/CAROLINE KAEKE UIUX Resume.pdf?url";
-import ckLogo from "../../../assets/logo/carol.png";
 import { BackIcon } from "./BackIcon";
+import { BrandLogo } from "./BrandLogo";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -35,10 +35,9 @@ export function Nav({
   const inkMuted = light ? "rgba(245,240,232,0.7)" : undefined;
 
   const logo = (
-    <img
-      src={ckLogo}
-      alt="Caroline Kaeke"
-      className="h-[100px] w-auto object-contain"
+    <BrandLogo
+      size={40}
+      className="shrink-0 rounded-[10px] shadow-[0_4px_14px_rgba(28,26,23,0.12)]"
     />
   );
 
@@ -53,21 +52,21 @@ export function Nav({
         }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-[100px] flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
           {variant === "case-study" ? (
             <button
               onClick={onBack}
-              className="hover:opacity-70 transition-opacity flex items-center gap-2"
+              className="hover:opacity-80 transition-opacity flex items-center gap-2.5"
               style={{ color: ink ?? "var(--foreground)" }}
               aria-label="Back to portfolio"
             >
-              <BackIcon size={22} />
+              <BackIcon size={20} />
               {logo}
             </button>
           ) : (
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="hover:opacity-70 transition-opacity"
+              className="hover:opacity-80 transition-opacity"
               aria-label="Caroline Kaeke — home"
             >
               {logo}
