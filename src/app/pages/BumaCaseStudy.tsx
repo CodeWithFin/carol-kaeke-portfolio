@@ -4,9 +4,9 @@ import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { CaseStudyHero } from "../components/CaseStudyHero";
-import bumaHero from "../../../assets/images/Silver.png";
-import bumaFinalSolution from "../../../assets/images/HERO (2) (2).png";
 import bumaCardImage from "../../../assets/images/buma-card-image.jpeg";
+import bumaImage1 from "../../../assets/project-images/buma-1.jpeg";
+import bumaImage2 from "../../../assets/project-images/buma-2.jpeg";
 
 const DECISIONS = [
   {
@@ -126,23 +126,6 @@ export default function BumaCaseStudy() {
         </FadeUp>
       </section>
 
-      {/* Cover image */}
-      <FadeUp>
-        <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div
-            className="relative rounded-2xl overflow-hidden bg-muted flex items-center justify-center p-8 sm:p-12 lg:p-16"
-            style={{ height: "clamp(320px, 50vw, 620px)", boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
-          >
-            <img
-              src={bumaHero}
-              alt="BUMA Awards music event atmosphere"
-              className="max-h-full max-w-full object-contain block"
-              style={{ maxHeight: "90%", maxWidth: "90%" }}
-            />
-          </div>
-        </div>
-      </FadeUp>
-
       {/* Problem Context */}
       <section className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
         <FadeUp>
@@ -238,24 +221,25 @@ export default function BumaCaseStudy() {
           </div>
         </FadeUp>
 
-        {/* Single full-page image */}
-        <FadeUp delay={0.05}>
-          <div
-            className="relative rounded-2xl overflow-y-auto overscroll-contain bg-muted mb-5"
-            style={{ height: "clamp(420px, 65vw, 720px)", boxShadow: "0 32px 80px rgba(28,26,23,0.16)" }}
-            tabIndex={0}
-            aria-label="Scrollable preview of the final BUMA Awards landing page"
-          >
-            <img
-              src={bumaFinalSolution}
-              alt="Final redesigned BUMA Awards landing page"
-              className="w-full h-auto block"
-            />
-          </div>
-          <p className="text-xs text-muted-foreground text-center mb-16" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
-            Final redesigned BUMA Awards landing page complete user journey from event discovery to ticket purchase, voting, and sponsorship opportunities.
-          </p>
-        </FadeUp>
+        <div className="space-y-8 mb-28">
+          {[
+            { src: bumaImage1, alt: "BUMA Awards — redesigned landing page overview" },
+            { src: bumaImage2, alt: "BUMA Awards — key sections and user journeys" },
+          ].map((img, i) => (
+            <FadeUp key={img.alt} delay={i * 0.08}>
+              <div
+                className="relative rounded-2xl overflow-hidden bg-muted"
+                style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full object-contain h-auto block"
+                />
+              </div>
+            </FadeUp>
+          ))}
+        </div>
 
         {/* Unified narrative */}
         <FadeUp delay={0.08}>
