@@ -12,7 +12,7 @@ export function CaseStudyHero({
   accent?: string;
 }) {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={image}
@@ -36,7 +36,7 @@ export function CaseStudyHero({
         />
       </div>
 
-      <div className="relative z-10 px-6 text-center max-w-4xl mx-auto pt-16">
+      <div className="relative z-10 w-full px-6 lg:px-12 max-w-7xl mx-auto text-left pt-16">
         <FadeUp>
           <span
             className="inline-block text-xs tracking-[0.2em] uppercase mb-6"
