@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { CaseStudyHero } from "../components/CaseStudyHero";
-import kycImage from "../../../assets/images/kyc.png";
-import sectionThreeImage from "../../../assets/images/Section 3.png";
-import mainImage from "../../../assets/images/tHE MAIN IMAGE.png";
-import onboardingImage from "../../../assets/images/create account (2).png";
 import belongCover from "../../../assets/images/belong-card-image.jpeg";
+import belongImage1 from "../../../assets/project-images/belong-1.jpeg";
+import belongImage2 from "../../../assets/project-images/belong-2.jpeg";
 
 const DECISIONS = [
   {
@@ -68,10 +66,6 @@ const FLOW_SECTIONS = [
     id: "onboarding",
     label: "01 — Onboarding Flow",
     title: "Creating momentum from the first screen",
-    image: onboardingImage,
-    imageFit: "contain" as const,
-    imageAlt: "Mobile screens showing the Belong onboarding flow",
-    caption: "Belong onboarding — Create Account → Verify Phone → Set PIN → Confirm PIN",
     annotations: [
       { label: "Minimal fields", body: "Only name, email, and password are requested on the first screen. The referral code is collapsed under an optional disclosure — visible but not demanding attention." },
       { label: "OTP verification", body: "Phone verification happens immediately after account creation, establishing trust and securing the account before the user invests any more time." },
@@ -84,10 +78,6 @@ const FLOW_SECTIONS = [
     id: "kyc",
     label: "02 — KYC Flow",
     title: "Making compliance feel like care",
-    image: kycImage,
-    imageFit: "contain" as const,
-    imageAlt: "Mobile screens showing the Belong KYC verification flow",
-    caption: "Belong KYC — Overview → Personal Info → Residential → Financial → Document Upload",
     annotations: [
       { label: "KYC overview screen", body: "The first screen explains what will be collected, why it is required by regulation, and provides a 3–5 minute time estimate. Users who know what to expect are less likely to abandon mid-flow." },
       { label: "Progress indicator", body: "A four-step indicator (Personal → Residential → Financial → Documents) is persistent across all KYC screens. Users always know how far they are from completing." },
@@ -100,10 +90,6 @@ const FLOW_SECTIONS = [
     id: "home",
     label: "03 — Home, Product & Portfolio",
     title: "From browsing to ownership",
-    image: sectionThreeImage,
-    imageFit: "contain" as const,
-    imageAlt: "Mobile screens showing the Belong home, product detail, and portfolio screens",
-    caption: "Belong — Home Dashboard · Product Detail · Portfolio Overview",
     subsections: [
       {
         title: "Home Dashboard",
@@ -174,19 +160,6 @@ export default function BelongCaseStudy() {
           </div>
         </FadeUp>
       </section>
-
-      {/* Cover image */}
-      <FadeUp>
-        <div className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}>
-            <img
-              src={mainImage}
-              alt="Belong Investment App — overview"
-              className="w-full object-contain h-auto block"
-            />
-          </div>
-        </div>
-      </FadeUp>
 
       {/* Problem Context */}
       <section className="px-6 lg:px-12 max-w-7xl mx-auto mb-28">
@@ -287,6 +260,26 @@ export default function BelongCaseStudy() {
           </div>
         </FadeUp>
 
+        <div className="space-y-8 mb-28">
+          {[
+            { src: belongImage1, alt: "Belong Investment App — product screens overview" },
+            { src: belongImage2, alt: "Belong Investment App — key flows and screens" },
+          ].map((img, i) => (
+            <FadeUp key={img.alt} delay={i * 0.08}>
+              <div
+                className="relative rounded-2xl overflow-hidden bg-muted"
+                style={{ boxShadow: "0 32px 80px rgba(28,26,23,0.14)" }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full object-contain h-auto block"
+                />
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
         <div className="space-y-28">
           {FLOW_SECTIONS.map((flow) => (
             <FadeUp key={flow.id}>
@@ -296,25 +289,6 @@ export default function BelongCaseStudy() {
                   <h3 className="text-3xl lg:text-4xl font-normal text-foreground" style={{ fontFamily: "'Fraunces', serif" }}>{flow.title}</h3>
                 </div>
 
-                {/* Screen image */}
-                <div className="relative rounded-2xl overflow-hidden bg-muted mb-4" style={{ boxShadow: "0 24px 60px rgba(28,26,23,0.12)" }}>
-                  <img
-                    src={flow.image}
-                    alt={flow.imageAlt}
-                    className={`w-full ${flow.imageFit === "contain" ? "object-contain h-auto" : "object-cover"}`}
-                    style={
-                      flow.imageFit === "contain"
-                        ? { display: "block" }
-                        : { height: "clamp(220px, 40vw, 500px)", filter: "saturate(0.88) contrast(1.02)" }
-                    }
-                  />
-                  {flow.imageFit !== "contain" && (
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,26,23,0.08) 0%, transparent 50%)" }} />
-                  )}
-                </div>
-                <p className="text-xs text-muted-foreground text-center mb-12" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{flow.caption}</p>
-
-                {/* Annotations or subsections */}
                 {flow.annotations ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {flow.annotations.map((a) => (
@@ -338,7 +312,6 @@ export default function BelongCaseStudy() {
                   </div>
                 )}
 
-                {/* Impact block for annotated flows */}
                 {flow.impact && (
                   <div className="mt-8 p-5 rounded-xl border border-primary/20" style={{ backgroundColor: "rgba(107,143,113,0.07)" }}>
                     <div className="text-[10px] tracking-widest text-primary mb-1.5" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>IMPACT</div>
