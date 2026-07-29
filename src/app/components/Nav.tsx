@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useScrollY } from "../lib/shared";
 import resumePDF from "../../imports/Caroline_Kaeke-Resume-UI_UX.docx.pdf?url";
+import ckLogo from "../../../assets/logo/carol.png";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -32,6 +33,14 @@ export function Nav({
   const ink = light ? "rgba(245,240,232,0.92)" : undefined;
   const inkMuted = light ? "rgba(245,240,232,0.7)" : undefined;
 
+  const logo = (
+    <img
+      src={ckLogo}
+      alt="Caroline Kaeke"
+      className="h-[100px] w-auto object-contain"
+    />
+  );
+
   return (
     <>
       <header
@@ -43,22 +52,24 @@ export function Nav({
         }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-[100px] flex items-center justify-between">
           {variant === "case-study" ? (
             <button
               onClick={onBack}
-              className="font-serif text-lg font-medium tracking-tight hover:opacity-70 transition-opacity flex items-center gap-2"
-              style={{ fontFamily: "'Fraunces', serif", color: ink ?? "var(--foreground)" }}
+              className="hover:opacity-70 transition-opacity flex items-center gap-2"
+              style={{ color: ink ?? "var(--foreground)" }}
+              aria-label="Back to portfolio"
             >
-              <span className="text-base">←</span> CK
+              <span className="text-base">←</span>
+              {logo}
             </button>
           ) : (
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="font-serif text-foreground text-lg font-medium tracking-tight hover:opacity-70 transition-opacity"
-              style={{ fontFamily: "'Fraunces', serif" }}
+              className="hover:opacity-70 transition-opacity"
+              aria-label="Caroline Kaeke — home"
             >
-              CK
+              {logo}
             </button>
           )}
 
