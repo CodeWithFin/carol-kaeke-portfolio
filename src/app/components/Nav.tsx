@@ -3,6 +3,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useScrollY } from "../lib/shared";
 import resumePDF from "../../imports/Caroline_Kaeke-Resume-UI_UX.docx.pdf?url";
 import ckLogo from "../../../assets/logo/carol.png";
+import { BackIcon } from "./BackIcon";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -60,7 +61,7 @@ export function Nav({
               style={{ color: ink ?? "var(--foreground)" }}
               aria-label="Back to portfolio"
             >
-              <span className="text-base">←</span>
+              <BackIcon size={22} />
               {logo}
             </button>
           ) : (
@@ -145,10 +146,10 @@ export function Nav({
           {variant === "case-study" && (
             <button
               onClick={() => { setMenuOpen(false); onBack?.(); }}
-              className="text-left text-3xl font-medium text-foreground"
+              className="text-left text-3xl font-medium text-foreground flex items-center gap-3"
               style={{ fontFamily: "'Fraunces', serif" }}
             >
-              ← Back to portfolio
+              <BackIcon size={28} /> Back to portfolio
             </button>
           )}
           <div className="flex flex-col gap-4 mt-4">

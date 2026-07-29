@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { BackIcon } from "../components/BackIcon";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
@@ -352,7 +352,7 @@ export default function SkootRideCaseStudy() {
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors group"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+            <BackIcon size={14} className="group-hover:-translate-x-1 transition-transform" />
             Back to all work
           </button>
         </FadeUp>
