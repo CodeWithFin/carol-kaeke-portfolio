@@ -1,23 +1,27 @@
-import ckMark from "../../../assets/logo/ck-app-icon.png";
-
-/** App-icon monogram for Caroline Kaeke — used in nav and as favicon. */
+/** Boundary-free artistic CK wordmark — Fraunces italic, inherits color. */
 export function BrandLogo({
-  size = 40,
   className,
   title = "Caroline Kaeke",
 }: {
-  size?: number;
   className?: string;
   title?: string;
 }) {
   return (
-    <img
-      src={ckMark}
-      alt={title}
-      width={size}
-      height={size}
+    <span
       className={className}
-      draggable={false}
-    />
+      title={title}
+      aria-label={title}
+      style={{
+        fontFamily: "'Fraunces', serif",
+        fontStyle: "italic",
+        fontWeight: 500,
+        fontSize: "1.65rem",
+        letterSpacing: "-0.04em",
+        lineHeight: 1,
+        color: "inherit",
+      }}
+    >
+      CK
+    </span>
   );
 }

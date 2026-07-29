@@ -34,12 +34,7 @@ export function Nav({
   const ink = light ? "rgba(245,240,232,0.92)" : undefined;
   const inkMuted = light ? "rgba(245,240,232,0.7)" : undefined;
 
-  const logo = (
-    <BrandLogo
-      size={40}
-      className="shrink-0 rounded-[10px] shadow-[0_4px_14px_rgba(28,26,23,0.12)]"
-    />
-  );
+  const logo = <BrandLogo className="shrink-0" />;
 
   return (
     <>
@@ -67,6 +62,7 @@ export function Nav({
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="hover:opacity-80 transition-opacity"
+              style={{ color: "var(--foreground)" }}
               aria-label="Caroline Kaeke — home"
             >
               {logo}
