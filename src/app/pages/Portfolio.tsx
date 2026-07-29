@@ -4,7 +4,7 @@ import { Download, ArrowRight } from "lucide-react";
 import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
-import resumePDF from "../../imports/Caroline_Kaeke-Resume-UI_UX.docx.pdf?url";
+import resumePDF from "../../../assets/CAROLINE KAEKE UIUX Resume.pdf?url";
 import caroHeroImage from "../../../assets/images/caro-face-card.jpeg";
 import belongCover from "../../../assets/images/belong-card-image.jpeg";
 import skootGasCover from "../../../assets/images/skoot-card-image.jpeg";
