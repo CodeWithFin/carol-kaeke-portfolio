@@ -86,7 +86,7 @@ const TIMELINE = [
   {
     role: "Product Designer (Contract)",
     company: "Siscom Africa",
-    period: "Dec 2025 — Present",
+    period: "Dec 2025 to Present",
     summary: "Designing end-to-end fintech experiences for investment and lending platforms.",
     subProjects: null,
     highlights: [
@@ -117,7 +117,7 @@ const TIMELINE = [
   {
     role: "Product Design Intern",
     company: "Voltax Africa",
-    period: "Sep 2025 — Dec 2025",
+    period: "Sep 2025 to Dec 2025",
     summary: "Redesigned the Buma Awards platform to improve navigation, discoverability, and engagement.",
     subProjects: null,
     highlights: [
@@ -131,7 +131,7 @@ const TIMELINE = [
   {
     role: "UI/UX Designer (Volunteer)",
     company: "Tech Sisters Kenya",
-    period: "Aug 2025 — Present",
+    period: "Aug 2025 to Present",
     summary: "Designed digital experiences supporting mentorship, networking, and professional development.",
     subProjects: null,
     highlights: [
@@ -313,7 +313,7 @@ export default function Portfolio() {
               Designing digital products that simplify complex experiences across fintech, mobility, and digital platforms.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed mb-10 max-w-lg" style={{ fontFamily: "'Inter', sans-serif" }}>
-              I design user-centered products that balance business goals with intuitive experiences — from investment platforms and on-demand services to mobility solutions and digital experiences.
+              I design user-centered products that balance business goals with intuitive experiences across investment platforms, on-demand services, and mobility.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <button
@@ -471,7 +471,7 @@ export default function Portfolio() {
             <div className="max-w-lg ml-0 lg:ml-[8%] border-t border-border/60 pt-16">
               <span className="text-[10px] tracking-[0.2em] text-muted-foreground/60 block mb-6" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>BEYOND DESIGN</span>
               <p className="text-[1.05rem] text-foreground/55 font-light leading-[1.75] mb-8" style={{ fontFamily: "'Fraunces', serif" }}>
-                Outside of product work, I enjoy connecting with communities and people — I&apos;m part of several tech communities and always look forward to our meetups. I&apos;m also curious about emerging technologies, AI-assisted design, and accessibility, and how digital products can create meaningful impact across Africa.
+                Outside of product work, I enjoy connecting with communities. I&apos;m part of several tech groups and always look forward to our meetups. I&apos;m also interested in emerging technologies, AI-assisted design, and accessibility, and in how digital products can create meaningful impact across Africa.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Tech Communities", "AI-Assisted Design", "Accessibility", "Impact-Driven Design"].map((tag) => (
