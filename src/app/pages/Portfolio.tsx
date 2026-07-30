@@ -5,7 +5,7 @@ import { FadeUp } from "../lib/shared";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import resumePDF from "../../../assets/CAROLINE KAEKE UIUX Resume.pdf?url";
-import caroHeroImage from "../../../assets/images/caro-face-card.jpeg";
+import caroHeroImage from "../../../assets/project-images/carol-profile.jpeg";
 import belongCover from "../../../assets/images/belong-card-image.jpeg";
 import skootGasCover from "../../../assets/images/skoot-card-image.jpeg";
 import skootRideCover from "../../../assets/images/skoot-ride-card-image.jpeg";
