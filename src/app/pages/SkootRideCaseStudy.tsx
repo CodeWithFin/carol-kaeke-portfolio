@@ -13,20 +13,20 @@ const DECISIONS = [
     num: "01",
     focus: "Discovery · Conversion",
     title: "Guided Lease Selection",
-    decision: "Present exactly two lease options — Standard Lease and Lease-to-Own — side by side with a clear recommendation badge on the most popular choice, and a simplified benefit comparison that avoids financial jargon.",
-    reason: "When users face a financial commitment with unfamiliar terminology, decision paralysis is the most common failure mode. Most users arriving on Skoot Ride are not experienced with leasing — they are aspiring riders who want to start earning, not financial analysts evaluating contract terms. Surfacing two clear options with a recommended path removes the burden of open-ended research and replaces it with a guided choice.",
+    decision: "Present exactly two lease options, Standard Lease and Lease-to-Own, side by side with a clear recommendation badge on the most popular choice, and a simplified benefit comparison that avoids financial jargon.",
+    reason: "When users face a financial commitment with unfamiliar terminology, decision paralysis is the most common failure mode. Most users arriving on Skoot Ride are not experienced with leasing. They are aspiring riders who want to start earning, not financial analysts evaluating contract terms. Surfacing two clear options with a recommended path removes the burden of open-ended research and replaces it with a guided choice.",
     uiChange: "A two-card comparison layout with the recommended option visually distinguished by a badge and a subtle highlight treatment. Each card shows the plan name, a one-line benefit summary, weekly/monthly rate, and a Continue CTA. A collapsible 'Learn more' section is available for users who want detail without it dominating the screen for users who don't.",
-    tradeoff: "Reducing the comparison to two options means some nuance in the plans (excess mileage charges, early exit terms) is not immediately visible. This was addressed through progressive disclosure — the detail is available, but not foregrounded at the point of initial choice.",
+    tradeoff: "Reducing the comparison to two options means some nuance in the plans (excess mileage charges, early exit terms) is not immediately visible. This was addressed through progressive disclosure. The detail is available, but not foregrounded at the point of initial choice.",
     impact: "Estimated 24% increase in lease selection completion · Estimated 18% reduction in decision-stage abandonment · Estimated 15% faster onboarding. Projections based on UX research on guided decision flows in financial and subscription products.",
   },
   {
     num: "02",
     focus: "Discovery",
     title: "Simplified Vehicle Discovery",
-    decision: "Display available vehicles as visual cards with imagery, category filters (tuk-tuk / e-bike), weekly lease price, and lease duration — allowing users to browse and compare before committing to a selection.",
-    reason: "Choosing a vehicle is one of the most emotionally significant moments in the leasing journey. Users are not just evaluating a product — they are imagining their daily working life. Visual browsing with clear pricing visible upfront (rather than revealed only after selecting a vehicle) respects that weight. Category filters allow users with a specific vehicle type in mind to reduce the list quickly without scrolling through irrelevant options.",
+    decision: "Display available vehicles as visual cards with imagery, category filters (tuk-tuk / e-bike), weekly lease price, and lease duration, allowing users to browse and compare before committing to a selection.",
+    reason: "Choosing a vehicle is one of the most emotionally significant moments in the leasing journey. Users are not just evaluating a product. They are imagining their daily working life. Visual browsing with clear pricing visible upfront (rather than revealed only after selecting a vehicle) respects that weight. Category filters allow users with a specific vehicle type in mind to reduce the list quickly without scrolling through irrelevant options.",
     uiChange: "A scrollable vehicle catalogue with filter tabs across the top (All / Tuk-Tuk / E-Bike). Each vehicle card shows a product image, vehicle name, lease type label, weekly rate, lease duration, and a prominent Select Vehicle CTA. Tapping the card expands a detail view with specifications before committing.",
-    tradeoff: "Showing pricing on the browse screen means users may filter out vehicles before understanding the full value proposition (insurance included, maintenance covered, etc.). A brief value summary beneath the price — 'Includes insurance & maintenance' — was added to prevent premature price-based rejection.",
+    tradeoff: "Showing pricing on the browse screen means users may filter out vehicles before understanding the full value proposition (insurance included, maintenance covered, etc.). A brief value summary beneath the price ('Includes insurance & maintenance') was added to prevent premature price-based rejection.",
     impact: "Estimated 20% increase in vehicle selection completion · Estimated 15% faster time-to-selection. Based on product browsing benchmarks showing that visible pricing and visual imagery together reduce selection abandonment.",
   },
   {
@@ -34,7 +34,7 @@ const DECISIONS = [
     focus: "Trust · Completion",
     title: "Transparent Identity Verification",
     decision: "Open the KYC flow with a clear document checklist showing exactly what is required before the user begins uploading, with individual upload progress states for each document.",
-    reason: "KYC abandonment in leasing applications is almost always caused by surprise — users encounter a document requirement they weren't expecting (a utility bill, a second form of ID) and exit to retrieve it, often not returning. Showing the complete document list upfront eliminates this surprise. Upload progress states for each document (Not Uploaded → Uploading → Uploaded) give users a visible sense of momentum and allow them to complete the verification in stages without losing their place.",
+    reason: "KYC abandonment in leasing applications is almost always caused by surprise. Users encounter a document requirement they weren't expecting (a utility bill, a second form of ID) and exit to retrieve it, often not returning. Showing the complete document list upfront eliminates this surprise. Upload progress states for each document (Not Uploaded → Uploading → Uploaded) give users a visible sense of momentum and allow them to complete the verification in stages without losing their place.",
     uiChange: "A verification screen with a static list of required documents at the top (National ID, Driver's License, Proof of Residence, Passport photo). Each document has an upload button and a status indicator. A progress summary at the top shows how many of the required documents have been submitted. The Submit Application CTA only activates once all required documents are uploaded.",
     tradeoff: "Showing the full document list upfront can feel daunting if the list is long. The design mitigated this by grouping documents by category (Identity / Address / Photo) and using a step-count indicator ('3 of 4 uploaded') to reinforce progress rather than remaining work.",
     impact: "Estimated 28% improvement in KYC completion · Estimated 25% reduction in verification abandonment. Based on research showing that transparency about document requirements before upload begins significantly reduces mid-flow exits.",
@@ -43,10 +43,10 @@ const DECISIONS = [
     num: "04",
     focus: "Clarity · Trust",
     title: "Lease Management Dashboard",
-    decision: "Design the central dashboard to always communicate the rider's current lease status — including application review, approval, active lease health, payment schedule, and vehicle immobilisation warnings — through a single, scannable screen.",
-    reason: "A leasing relationship spans weeks or months. The dashboard is not a one-time onboarding screen — it is the place riders return to daily. If this screen fails to answer 'what is happening with my lease right now?', riders contact support. Every status state the lease can be in (Under Review, Approved, Active, Payment Overdue, Immobilised) needs a clear, unambiguous visual treatment. Ambiguity at this point does not just create anxiety — it creates churn.",
-    uiChange: "A status-first dashboard layout where the lease state is communicated in a prominent card at the top — colour-coded and labelled (Active / Under Review / Warning / Immobilised). Below this: lease overview (vehicle, plan, weekly rate, next payment), vehicle information card, and quick action buttons (Make Payment, View Schedule, Contact Support). Contextual alert banners appear at the top of the screen for time-sensitive states (missed payment, immobilisation warning).",
-    tradeoff: "Using colour coding to communicate lease state (green / amber / red) requires that the meaning of each colour is clearly labelled — colour alone is not accessible. Each state card includes both a colour indicator and a plain-language label to meet accessibility requirements and ensure the meaning is unambiguous.",
+    decision: "Design the central dashboard to always communicate the rider's current lease status, including application review, approval, active lease health, payment schedule, and vehicle immobilisation warnings, through a single, scannable screen.",
+    reason: "A leasing relationship spans weeks or months. The dashboard is not a one-time onboarding screen. It is the place riders return to daily. If this screen fails to answer 'what is happening with my lease right now?', riders contact support. Every status state the lease can be in (Under Review, Approved, Active, Payment Overdue, Immobilised) needs a clear, unambiguous visual treatment. Ambiguity at this point does not just create anxiety. It creates churn.",
+    uiChange: "A status-first dashboard layout where the lease state is communicated in a prominent card at the top, colour-coded and labelled (Active / Under Review / Warning / Immobilised). Below this: lease overview (vehicle, plan, weekly rate, next payment), vehicle information card, and quick action buttons (Make Payment, View Schedule, Contact Support). Contextual alert banners appear at the top of the screen for time-sensitive states (missed payment, immobilisation warning).",
+    tradeoff: "Using colour coding to communicate lease state (green / amber / red) requires that the meaning of each colour is clearly labelled. Colour alone is not accessible. Each state card includes both a colour indicator and a plain-language label to meet accessibility requirements and ensure the meaning is unambiguous.",
     impact: "Estimated 30% increase in dashboard engagement · Estimated 35% reduction in lease-related support contacts · Estimated 18% increase in lease renewal intent. Based on dashboard UX research across fintech and mobility platforms.",
   },
   {
@@ -54,7 +54,7 @@ const DECISIONS = [
     focus: "Retention · Completion",
     title: "Charging & Wallet Experience",
     decision: "Surface charging session information (duration, energy consumed, live progress) and wallet balance as closely connected experiences, since both directly affect the rider's ability to operate their vehicle and earn income.",
-    reason: "For an electric vehicle rider, charging is not a passive background event — it is a direct dependency of their working day. If a rider does not know how long charging will take, or whether their wallet balance is sufficient for the next lease payment, they face operational uncertainty that reduces confidence in the platform. Connecting charging visibility with wallet transparency makes the platform feel like a reliable working tool rather than a device management app.",
+    reason: "For an electric vehicle rider, charging is not a passive background event. It is a direct dependency of their working day. If a rider does not know how long charging will take, or whether their wallet balance is sufficient for the next lease payment, they face operational uncertainty that reduces confidence in the platform. Connecting charging visibility with wallet transparency makes the platform feel like a reliable working tool rather than a device management app.",
     uiChange: "A charging screen showing session duration (elapsed and estimated total), live energy consumption in kWh, a progress indicator, and a Stop Charging action with a confirmation step to prevent accidental taps. The wallet screen shows available balance prominently, a transaction history filtered by category (Lease Payments / Top-ups / Charging), and a top-up flow reachable in one tap.",
     tradeoff: "Combining charging and wallet into related but distinct screens (rather than a single unified screen) was a deliberate choice. Merging them risked creating a screen that tried to do too much and communicated neither function clearly. The bottom navigation links both screens with one tap between them.",
     impact: "Estimated 20% increase in charging session completion · Estimated 22% wallet adoption rate · Estimated 18% improvement in rider retention. Projected based on EV platform UX benchmarks and wallet adoption patterns in comparable mobility-as-a-service products.",
@@ -64,11 +64,11 @@ const DECISIONS = [
 const FLOW_SECTIONS = [
   {
     id: "lease-selection",
-    label: "01 — Lease Selection",
+    label: "01 · Lease Selection",
     title: "Removing the anxiety of a financial choice",
     annotations: [
       { label: "Two-option comparison", body: "Presenting exactly two lease options removes the cognitive overhead of evaluating a long list. The user's job becomes a binary comparison, not an open-ended search." },
-      { label: "Recommendation badge", body: "A 'Most Popular' badge on the Lease-to-Own option provides social proof and a clear default for undecided users — they can choose it with confidence without needing to understand every detail of the alternative." },
+      { label: "Recommendation badge", body: "A 'Most Popular' badge on the Lease-to-Own option provides social proof and a clear default for undecided users. They can choose it with confidence without needing to understand every detail of the alternative." },
       { label: "Simplified benefits", body: "Each option shows three to four benefit statements in plain language rather than contract terms. 'Own the vehicle after 12 months' communicates the value of Lease-to-Own more effectively than 'residual value transfer clause.'" },
       { label: "Progressive disclosure", body: "A collapsible 'Learn more' section is available for users who want the full terms, but it is collapsed by default. The primary flow is never blocked by detail that most users don't need at this stage." },
     ],
@@ -76,11 +76,11 @@ const FLOW_SECTIONS = [
   },
   {
     id: "vehicle-selection",
-    label: "02 — Vehicle Selection",
+    label: "02 · Vehicle Selection",
     title: "Making the right vehicle feel obvious",
     annotations: [
       { label: "Category filters", body: "Tabs filtering by vehicle type (All / Tuk-Tuk / E-Bike) allow users who already know what they want to reduce the list in one tap. Users who are undecided can browse the full catalogue." },
-      { label: "Pricing on browse", body: "The weekly lease rate is visible on each vehicle card — not hidden until after selection. Users can make a financially informed shortlist without needing to tap into each vehicle's detail page." },
+      { label: "Pricing on browse", body: "The weekly lease rate is visible on each vehicle card, not hidden until after selection. Users can make a financially informed shortlist without needing to tap into each vehicle's detail page." },
       { label: "Value summary beneath price", body: "'Includes insurance & maintenance' appears beneath each price to prevent users from rejecting options based on rate alone before understanding what is included in the lease." },
       { label: "Select Vehicle CTA", body: "A prominent CTA on each card eliminates ambiguity about how to proceed. Tapping the card image expands a detail view for users who want specs before committing." },
     ],
@@ -88,11 +88,11 @@ const FLOW_SECTIONS = [
   },
   {
     id: "kyc",
-    label: "03 — Identity Verification",
+    label: "03 · Identity Verification",
     title: "No surprises, no abandoned applications",
     annotations: [
-      { label: "Document checklist upfront", body: "The complete list of required documents is shown before the user begins uploading. Users can check they have everything available before starting — eliminating mid-flow exits to retrieve missing documents." },
-      { label: "Per-document progress states", body: "Each document has its own status indicator (Not Uploaded → Uploading → Uploaded ✓). Users can see at a glance which documents are complete and which remain — supporting partial completion and return visits." },
+      { label: "Document checklist upfront", body: "The complete list of required documents is shown before the user begins uploading. Users can check they have everything available before starting, eliminating mid-flow exits to retrieve missing documents." },
+      { label: "Per-document progress states", body: "Each document has its own status indicator (Not Uploaded → Uploading → Uploaded ✓). Users can see at a glance which documents are complete and which remain, supporting partial completion and return visits." },
       { label: "Upload count indicator", body: "A header summary shows '3 of 4 documents uploaded', framing the task in terms of progress made rather than work remaining. This mirrors the psychology of completion rather than deficit." },
       { label: "Conditional Submit CTA", body: "The Submit Application button is inactive until all required documents are uploaded, preventing incomplete submissions and the support overhead of chasing missing documents after submission." },
     ],
@@ -100,10 +100,10 @@ const FLOW_SECTIONS = [
   },
   {
     id: "dashboard",
-    label: "04 — Lease Dashboard & Application Status",
+    label: "04 · Lease Dashboard & Application Status",
     title: "Always knowing where you stand",
     annotations: [
-      { label: "Status-first layout", body: "The lease state is communicated in the first card a user sees — colour-coded and labelled in plain language. Under Review, Approved, Active, Payment Due, and Immobilised each have distinct visual treatments so the state is scannable in under two seconds." },
+      { label: "Status-first layout", body: "The lease state is communicated in the first card a user sees, colour-coded and labelled in plain language. Under Review, Approved, Active, Payment Due, and Immobilised each have distinct visual treatments so the state is scannable in under two seconds." },
       { label: "Contextual alert banners", body: "Time-sensitive states (missed payment, immobilisation warning) trigger a prominent banner at the top of the screen, ensuring riders see critical information without needing to scroll. Banners are dismissible once the user acknowledges the action required." },
       { label: "Lease overview card", body: "Vehicle name, plan type, weekly rate, and next payment date are summarised in a persistent card below the status indicator. Riders never need to navigate away from the dashboard to find their basic lease terms." },
       { label: "Quick actions", body: "Make Payment, View Schedule, and Contact Support are surfaced as labelled action buttons rather than buried in a menu. For the most common post-onboarding tasks, the dashboard is the only screen a rider ever needs." },
@@ -112,24 +112,24 @@ const FLOW_SECTIONS = [
   },
   {
     id: "charging",
-    label: "05 — Charging Experience",
+    label: "05 · Charging Experience",
     title: "Making charging feel in control, not opaque",
     annotations: [
-      { label: "Session duration display", body: "Elapsed time and estimated completion time are both shown — 'Charging for 24 min · Est. 1h 10min remaining'. Showing both eliminates the anxiety of not knowing how long the session will take." },
+      { label: "Session duration display", body: "Elapsed time and estimated completion time are both shown: 'Charging for 24 min · Est. 1h 10min remaining'. Showing both eliminates the anxiety of not knowing how long the session will take." },
       { label: "Live energy consumption", body: "kWh consumed updates in real time during the session. For riders who pay per unit of energy, this provides financial transparency alongside operational awareness." },
       { label: "Progress indicator", body: "A visual charging progress bar gives an at-a-glance summary for users who check the screen briefly and don't want to read numbers. It mirrors the familiar pattern of a phone charging indicator." },
-      { label: "Stop Charging with confirmation", body: "The Stop Charging action requires a single confirmation step to prevent accidental taps — particularly important for a session that, once interrupted, may affect the rider's working range for the day." },
+      { label: "Stop Charging with confirmation", body: "The Stop Charging action requires a single confirmation step to prevent accidental taps, particularly important for a session that, once interrupted, may affect the rider's working range for the day." },
     ],
     impact: "Estimated 20% increase in charging session completion without interruption · Estimated 15% reduction in unplanned charging stops. Projected based on EV user behaviour research and smart charging interface benchmarks.",
   },
   {
     id: "wallet",
-    label: "06 — Wallet & Payments",
+    label: "06 · Wallet & Payments",
     title: "Financial clarity for riders managing a lease",
     annotations: [
-      { label: "Balance prominence", body: "Available wallet balance is the dominant element on the screen — not a secondary figure beneath a graph or buried in settings. Riders need to know at a glance whether they can cover their next lease payment." },
+      { label: "Balance prominence", body: "Available wallet balance is the dominant element on the screen, not a secondary figure beneath a graph or buried in settings. Riders need to know at a glance whether they can cover their next lease payment." },
       { label: "Categorised transaction history", body: "Transactions are categorised (Lease Payments / Top-ups / Charging) so riders can quickly audit their spending without scrolling through a mixed-purpose ledger. Each entry shows date, category, and amount." },
-      { label: "Top-up in one tap", body: "The Top Up button is immediately adjacent to the balance display — where a rider's attention already is when they realise they need to add credit. No navigation or menu required." },
+      { label: "Top-up in one tap", body: "The Top Up button is immediately adjacent to the balance display, where a rider's attention already is when they realise they need to add credit. No navigation or menu required." },
       { label: "Lease payment records", body: "Past lease payments are visible in the transaction history with their reference numbers. Riders can verify payments without contacting support, which reduces inbound queries and builds confidence in the platform." },
     ],
     impact: "Estimated 22% wallet adoption rate · Estimated 18% improvement in rider retention · Estimated 15% faster repeat lease payments. Projected based on wallet adoption patterns in comparable mobility-as-a-service and fintech lease management platforms.",
@@ -164,7 +164,7 @@ export default function SkootRideCaseStudy() {
 
         <FadeUp delay={0.08}>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Skoot Ride is an electric mobility leasing platform that connects aspiring riders and delivery partners with electric tuk-tuks and e-bikes through affordable lease plans. Instead of purchasing a vehicle outright — a barrier most users cannot clear — riders lease and immediately begin earning. I designed the full experience across lease selection, vehicle discovery, KYC, the lease management dashboard, charging, and wallet.
+            Skoot Ride is an electric mobility leasing platform that connects aspiring riders and delivery partners with electric tuk-tuks and e-bikes through affordable lease plans. Instead of purchasing a vehicle outright, a barrier most users cannot clear. Riders lease and immediately begin earning. I designed the full experience across lease selection, vehicle discovery, KYC, the lease management dashboard, charging, and wallet.
           </p>
         </FadeUp>
 
@@ -200,8 +200,8 @@ export default function SkootRideCaseStudy() {
           {[
             {
               tag: "What users want",
-              heading: "A reliable income — and a vehicle is the only thing standing between them and it.",
-              body: "Users on Skoot Ride are not vehicle enthusiasts — they are aspiring riders and delivery partners who see an electric vehicle as a tool for financial independence. They want to earn a reliable income, become self-employed, and start working quickly. Their goal is not 'lease a vehicle'; it is 'change my economic situation'. The design needed to honour that weight.",
+              heading: "For many users, a vehicle is the only thing standing between them and a reliable income.",
+              body: "Users on Skoot Ride are not vehicle enthusiasts. They are aspiring riders and delivery partners who see an electric vehicle as a tool for financial independence. They want to earn a reliable income, become self-employed, and start working quickly. Their goal is not 'lease a vehicle'; it is 'change my economic situation'. The design needed to honour that weight.",
             },
             {
               tag: "Where users struggle",
@@ -211,7 +211,7 @@ export default function SkootRideCaseStudy() {
             {
               tag: "Why it matters to the business",
               heading: "Application abandonment and incomplete verifications mean fewer leased vehicles on the road.",
-              body: "Every abandoned application represents a potential long-term revenue relationship that never starts. Incomplete KYC submissions require manual follow-up, increasing operational cost. Low visibility into lease status drives support contacts. Without a reliable dashboard, riders miss payments — leading to vehicle immobilisation, lease termination, and poor unit economics for the platform.",
+              body: "Every abandoned application represents a potential long-term revenue relationship that never starts. Incomplete KYC submissions require manual follow-up, increasing operational cost. Low visibility into lease status drives support contacts. Without a reliable dashboard, riders miss payments, leading to vehicle immobilisation, lease termination, and poor unit economics for the platform.",
             },
             {
               tag: "Design opportunity",
@@ -285,8 +285,8 @@ export default function SkootRideCaseStudy() {
 
         <div className="space-y-8 mb-28">
           {[
-            { src: skootRideImage1, alt: "Skoot Ride — product screens overview" },
-            { src: skootRideImage2, alt: "Skoot Ride — key flows and screens" },
+            { src: skootRideImage1, alt: "Skoot Ride, product screens overview" },
+            { src: skootRideImage2, alt: "Skoot Ride, key flows and screens" },
           ].map((img, i) => (
             <FadeUp key={img.alt} delay={i * 0.08}>
               <div
@@ -337,7 +337,7 @@ export default function SkootRideCaseStudy() {
           <div className="max-w-2xl border-t border-border pt-16">
             <span className="text-xs text-muted-foreground tracking-widest block mb-6" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>REFLECTION</span>
             <p className="text-xl lg:text-2xl text-foreground/70 font-light leading-relaxed" style={{ fontFamily: "'Fraunces', serif" }}>
-              Skoot Ride reminded me that when the stakes are high for users — when a product directly affects someone&apos;s ability to earn a living — the designer&apos;s responsibility extends beyond usability. Every moment of uncertainty we remove is a moment of{" "}
+              Skoot Ride reminded me that when the stakes are high for users. When a product directly affects someone&apos;s ability to earn a living. The designer&apos;s responsibility extends beyond usability. Every moment of uncertainty we remove is a moment of{" "}
               <span className="italic">confidence we give back</span>. That is the work that matters.
             </p>
           </div>

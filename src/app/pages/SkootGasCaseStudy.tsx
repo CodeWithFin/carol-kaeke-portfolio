@@ -14,7 +14,7 @@ const DECISIONS = [
     focus: "Clarity · Prevention",
     title: "Smart Gas Monitoring Dashboard",
     decision: "Surface remaining gas level, estimated days of usage, and a refill recommendation as the very first thing a user sees when they open the app.",
-    reason: "The core anxiety of a gas delivery user is not 'how do I order?' — it's 'am I about to run out without knowing?' Most users only think about ordering when gas runs out. By making the gas level the hero element of the home screen, we shift the user from reactive to proactive. A percentage indicator and estimated days remaining give concrete information that replaces vague worry with actionable awareness.",
+    reason: "The core anxiety of a gas delivery user is not 'how do I order?', it's 'am I about to run out without knowing?' Most users only think about ordering when gas runs out. By making the gas level the hero element of the home screen, we shift the user from reactive to proactive. A percentage indicator and estimated days remaining give concrete information that replaces vague worry with actionable awareness.",
     uiChange: "A prominent gas-level visualisation (circular progress indicator) sits at the top of the home dashboard alongside a percentage readout, an estimated days-remaining figure, and a colour-coded health status (Full → Good → Low → Critical). A refill recommendation banner appears contextually when levels drop below 30%.",
     tradeoff: "Making the monitoring UI the centrepiece means less screen real estate for promotions or discovery content. For new users with full cylinders, the dashboard can feel passive. This was addressed by showing relevant contextual content (past orders, supplier ratings) when gas levels are high.",
     impact: "Estimated 35% increase in earlier refill orders · Estimated 40% reduction in emergency refill requests. Projections based on UX research on proactive notification systems in utility and delivery apps.",
@@ -24,9 +24,9 @@ const DECISIONS = [
     focus: "Conversion",
     title: "Streamlined Checkout",
     decision: "Reduce the checkout flow to a single scrollable screen with pre-filled information, making placing an order a confirmation rather than a data-entry task.",
-    reason: "Every additional field or decision point in a checkout flow is a potential exit. For a household utility like gas, the user's intent to purchase is already formed — the checkout should validate and confirm, not interrogate. Pre-populating the delivery address, saved phone number, and preferred payment method removes the most common sources of mid-checkout abandonment.",
-    uiChange: "A consolidated checkout screen showing order summary with editable quantity, delivery address with a one-tap edit option, pre-filled phone number, an optional delivery notes field (collapsed by default), and a single prominent Pay button. Price breakdown is always visible — no hidden totals revealed only at the final step.",
-    tradeoff: "Pre-filling information requires users to trust that their saved data is accurate. If a user has moved or changed their number, they may not notice the pre-fill is wrong. An inline edit affordance and a confirmation nudge ('Delivering to: [address] — correct?') mitigates this without adding friction for the majority.",
+    reason: "Every additional field or decision point in a checkout flow is a potential exit. For a household utility like gas, the user's intent to purchase is already formed. The checkout should validate and confirm, not interrogate. Pre-populating the delivery address, saved phone number, and preferred payment method removes the most common sources of mid-checkout abandonment.",
+    uiChange: "A consolidated checkout screen showing order summary with editable quantity, delivery address with a one-tap edit option, pre-filled phone number, an optional delivery notes field (collapsed by default), and a single prominent Pay button. Price breakdown is always visible, no hidden totals revealed only at the final step.",
+    tradeoff: "Pre-filling information requires users to trust that their saved data is accurate. If a user has moved or changed their number, they may not notice the pre-fill is wrong. An inline edit affordance and a confirmation nudge ('Delivering to: [address], correct?') mitigates this without adding friction for the majority.",
     impact: "Estimated 20% increase in checkout completion · Estimated 18% reduction in cart abandonment. Based on industry benchmarks for pre-filled mobile checkout flows.",
   },
   {
@@ -34,7 +34,7 @@ const DECISIONS = [
     focus: "Trust · Completion",
     title: "Transparent Order Management",
     decision: "Give users a dedicated orders screen that clearly separates ongoing and completed orders, with delivery ETA always visible on active orders.",
-    reason: "After placing an order, the highest-anxiety moment for a delivery user is uncertainty: did it go through? When will it arrive? Is anything happening? An orders screen that surfaces ETA and current status prominently answers these questions before the user has to ask — which is what drives support contacts. Visibility of past orders also supports repeat ordering with fewer decisions.",
+    reason: "After placing an order, the highest-anxiety moment for a delivery user is uncertainty: did it go through? When will it arrive? Is anything happening? An orders screen that surfaces ETA and current status prominently answers these questions before the user has to ask, which is what drives support contacts. Visibility of past orders also supports repeat ordering with fewer decisions.",
     uiChange: "A tabbed orders screen with Ongoing and Completed tabs. Ongoing order cards show order details, delivery ETA, current status badge, and a prominent Track Order CTA. Completed orders show delivery timestamp and a quick Reorder action. The screen is reachable from the bottom navigation on one tap.",
     tradeoff: "A dedicated orders screen adds depth to the navigation hierarchy. Users unfamiliar with tab-based order history may not immediately find it. Placing it in the primary tab bar (not buried in a profile menu) was a deliberate choice to surface it as a core feature rather than a utility.",
     impact: "Estimated 25% increase in customer confidence scores · Estimated 30% reduction in support contacts. Modelled on delivery platform benchmarks where ETA visibility directly correlates with support ticket reduction.",
@@ -43,20 +43,20 @@ const DECISIONS = [
     num: "04",
     focus: "Trust",
     title: "Live Delivery Tracking",
-    decision: "Show a step-by-step delivery timeline with live progress, named milestones, and rider status updates — not just a single 'Order Placed' confirmation.",
-    reason: "The period between placing an order and receiving a delivery is where trust is won or lost. Users who can see that their order is moving — confirmed, picked up, en route, nearby — are significantly less anxious and less likely to cancel or contact support. Named milestones (Order Confirmed → Supplier Preparing → Rider Picked Up → On the Way → Arriving) make the wait feel structured rather than opaque.",
+    decision: "Show a step-by-step delivery timeline with live progress, named milestones, and rider status updates, not just a single 'Order Placed' confirmation.",
+    reason: "The period between placing an order and receiving a delivery is where trust is won or lost. Users who can see that their order is moving: confirmed, picked up, en route, nearby, are significantly less anxious and less likely to cancel or contact support. Named milestones (Order Confirmed → Supplier Preparing → Rider Picked Up → On the Way → Arriving) make the wait feel structured rather than opaque.",
     uiChange: "A tracking screen with a vertical progress timeline, each milestone shown as a labelled node with a timestamp when completed. The current stage is highlighted. A live status banner at the top shows the rider's name and estimated arrival time. The screen auto-refreshes without requiring the user to pull-to-refresh.",
-    tradeoff: "Real-time tracking requires reliable backend updates from suppliers and riders. If status updates are delayed, the tracking UI can misrepresent reality and damage trust more than a simple ETA would. Designing for graceful degradation — showing the last known status with a timestamp — was a key consideration.",
+    tradeoff: "Real-time tracking requires reliable backend updates from suppliers and riders. If status updates are delayed, the tracking UI can misrepresent reality and damage trust more than a simple ETA would. Designing for graceful degradation, showing the last known status with a timestamp, was a key consideration.",
     impact: "Estimated 35% reduction in 'Where is my order?' support requests · Estimated 20% increase in customer satisfaction scores. Based on delivery platform studies correlating tracking visibility with satisfaction.",
   },
   {
     num: "05",
     focus: "Retention",
     title: "Wallet & Payment Experience",
-    decision: "Introduce an in-app wallet with a visible balance, transaction history, and the ability to top up prepaid credit — making Skoot Gas a financial relationship, not just a transactional one.",
-    reason: "Users who maintain a wallet balance on a delivery platform are more likely to reorder without comparing alternatives, because the money is already committed. A wallet also removes payment friction at checkout — the user sees their balance and taps once to pay. Transparent transaction history builds financial trust by letting users see exactly where their money went and when.",
+    decision: "Introduce an in-app wallet with a visible balance, transaction history, and the ability to top up prepaid credit, making Skoot Gas a financial relationship, not just a transactional one.",
+    reason: "Users who maintain a wallet balance on a delivery platform are more likely to reorder without comparing alternatives, because the money is already committed. A wallet also removes payment friction at checkout. The user sees their balance and taps once to pay. Transparent transaction history builds financial trust by letting users see exactly where their money went and when.",
     uiChange: "A wallet screen showing available balance prominently, a top-up action, and a scrollable transaction history with date, order reference, and amount for each entry. At checkout, wallet balance is surfaced as the default payment option when sufficient funds are available.",
-    tradeoff: "Introducing a wallet means users must pre-load funds, which is a trust barrier for first-time users. The wallet was positioned as an optional fast-payment method — not the only payment option — to avoid blocking users who prefer card-on-delivery or direct card payments.",
+    tradeoff: "Introducing a wallet means users must pre-load funds, which is a trust barrier for first-time users. The wallet was positioned as an optional fast-payment method, not the only payment option, to avoid blocking users who prefer card-on-delivery or direct card payments.",
     impact: "Estimated 18% increase in repeat purchases · Estimated 22% wallet adoption rate · Estimated 15% faster repeat checkout times. Projections based on wallet adoption patterns in comparable delivery platforms.",
   },
 ];
@@ -64,22 +64,22 @@ const DECISIONS = [
 const FLOW_SECTIONS = [
   {
     id: "dashboard",
-    label: "01 — Smart Home Dashboard",
+    label: "01 · Smart Home Dashboard",
     title: "Understanding gas status at a glance",
     annotations: [
-      { label: "Personalised greeting", body: "The screen opens with the user's name and a contextual status message based on their current gas level — 'Good morning, Sarah. Your gas is running low.' This immediately frames the session around their most relevant need." },
+      { label: "Personalised greeting", body: "The screen opens with the user's name and a contextual status message based on their current gas level: 'Good morning, Sarah. Your gas is running low.' This immediately frames the session around their most relevant need." },
       { label: "Gas level visualisation", body: "A circular progress indicator shows remaining gas percentage alongside an estimated days-remaining figure. The colour shifts from green (full) to amber (low) to red (critical), giving instant status without reading a number." },
       { label: "Refill recommendation banner", body: "When gas drops below 30%, a contextual banner appears recommending a refill and surfacing the primary Order Gas CTA. The banner disappears once an order is placed to avoid unnecessary noise." },
-      { label: "Health status indicator", body: "A labelled status tag (Full / Good / Low / Critical) gives users a human-readable summary of their gas health — useful for users who find percentage figures abstract." },
+      { label: "Health status indicator", body: "A labelled status tag (Full / Good / Low / Critical) gives users a human-readable summary of their gas health, useful for users who find percentage figures abstract." },
     ],
     impact: "Estimated 35% increase in earlier refill ordering · Estimated 40% reduction in emergency gas shortages · Estimated 25% increase in engagement with refill reminders. These are projected outcomes based on UX benchmarks for proactive monitoring interfaces in household utility apps.",
   },
   {
     id: "checkout",
-    label: "02 — Checkout Experience",
+    label: "02 · Checkout Experience",
     title: "From decision to order in under 30 seconds",
     annotations: [
-      { label: "Simplified order summary", body: "The item, quantity selector, and total are shown at the top — giving users a clear anchor for what they are purchasing before they see the delivery details." },
+      { label: "Simplified order summary", body: "The item, quantity selector, and total are shown at the top, giving users a clear anchor for what they are purchasing before they see the delivery details." },
       { label: "Pricing transparency", body: "The price breakdown (item cost, delivery fee, total) is always visible in the summary. There are no surprise totals revealed only at the payment step." },
       { label: "Editable delivery information", body: "The delivery address and phone number are pre-filled from the user's profile. Each field has a visible edit affordance so users can change details without hunting through settings." },
       { label: "Optional delivery notes", body: "A collapsed 'Delivery instructions' field is available for users who need it (e.g. 'Leave at the gate') but does not demand attention from users who don't." },
@@ -88,22 +88,22 @@ const FLOW_SECTIONS = [
   },
   {
     id: "orders",
-    label: "03 — Order Management",
+    label: "03 · Order Management",
     title: "Every order, always visible",
     annotations: [
-      { label: "Ongoing/completed tabs", body: "Segmenting active and historical orders into tabs prevents the screen from becoming a mixed list. Active orders are always surfaced first — the most time-sensitive information leads." },
+      { label: "Ongoing/completed tabs", body: "Segmenting active and historical orders into tabs prevents the screen from becoming a mixed list. Active orders are always surfaced first. The most time-sensitive information leads." },
       { label: "Delivery ETA on active cards", body: "Each active order card shows the estimated delivery time prominently. Users don't need to open the tracking screen just to check when their order will arrive." },
-      { label: "Prominent Track Order CTA", body: "A single clearly labelled action on each active order card routes the user directly to the live tracking screen — no hunting through menus." },
+      { label: "Prominent Track Order CTA", body: "A single clearly labelled action on each active order card routes the user directly to the live tracking screen, no hunting through menus." },
       { label: "Quick Reorder on completed cards", body: "Completed orders offer a Reorder action that pre-fills the same item and delivery address, making repeat purchasing a one-tap decision." },
     ],
     impact: "Estimated 25% increase in order tracking engagement · Estimated 30% reduction in customer support contacts. Based on delivery app research showing that ETA visibility on order list screens significantly reduces inbound support volume.",
   },
   {
     id: "tracking",
-    label: "04 — Live Order Tracking",
+    label: "04 · Live Order Tracking",
     title: "Turning waiting into watching",
     annotations: [
-      { label: "Delivery milestone timeline", body: "A vertical timeline lists each stage of the delivery journey — Order Confirmed, Supplier Preparing, Rider Picked Up, On the Way, Arriving — with timestamps for completed stages. Users understand the full delivery arc, not just the current moment." },
+      { label: "Delivery milestone timeline", body: "A vertical timeline lists each stage of the delivery journey: Order Confirmed, Supplier Preparing, Rider Picked Up, On the Way, Arriving, with timestamps for completed stages. Users understand the full delivery arc, not just the current moment." },
       { label: "Current stage highlight", body: "The active milestone is visually distinguished from completed and pending stages, making it immediately clear where in the journey the order sits without reading every label." },
       { label: "Rider status banner", body: "A live banner at the top of the screen shows the rider's name and a real-time ETA. This personalises the delivery and reduces the feeling of dealing with an anonymous logistics system." },
       { label: "Auto-refresh", body: "The tracking screen updates automatically without requiring the user to pull-to-refresh. Removing this interaction reduces the friction of monitoring a live delivery." },
@@ -112,12 +112,12 @@ const FLOW_SECTIONS = [
   },
   {
     id: "wallet",
-    label: "05 — Wallet & Payments",
+    label: "05 · Wallet & Payments",
     title: "Making repeat purchases feel effortless",
     annotations: [
-      { label: "Available balance prominence", body: "The wallet balance is the first thing on the screen — not buried below a list of transactions. Users with enough balance to cover a refill see that immediately and feel ready to order." },
-      { label: "Transaction history", body: "A scrollable list of past transactions shows date, order reference, and amount. Users can verify their spending history without contacting support — reducing financial anxiety and building trust." },
-      { label: "Top-up action", body: "A clearly labelled top-up button allows users to add credit in one step. Positioning it next to the balance — rather than in settings — keeps the wallet feeling active rather than administrative." },
+      { label: "Available balance prominence", body: "The wallet balance is the first thing on the screen, not buried below a list of transactions. Users with enough balance to cover a refill see that immediately and feel ready to order." },
+      { label: "Transaction history", body: "A scrollable list of past transactions shows date, order reference, and amount. Users can verify their spending history without contacting support, reducing financial anxiety and building trust." },
+      { label: "Top-up action", body: "A clearly labelled top-up button allows users to add credit in one step. Positioning it next to the balance, rather than in settings, keeps the wallet feeling active rather than administrative." },
       { label: "Wallet-first checkout", body: "When wallet balance is sufficient, it is surfaced as the default payment option at checkout. Users who have pre-loaded credit experience a faster, one-tap payment without re-entering card details." },
     ],
     impact: "Estimated 18% increase in repeat purchases · Estimated 22% wallet adoption rate · Estimated 15% faster repeat checkout times. Projected based on wallet adoption benchmarks from comparable on-demand delivery platforms operating in similar markets.",
@@ -152,7 +152,7 @@ export default function SkootGasCaseStudy() {
 
         <FadeUp delay={0.08}>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Skoot Gas is an on-demand gas delivery platform that connects households with trusted suppliers for fast doorstep refills. The core promise — you never run out of gas — required combining IoT-powered monitoring, predictive alerts, live order tracking, and digital payments into one seamless mobile experience. I designed the end-to-end flow across the home dashboard, checkout, order management, live tracking, and wallet.
+            Skoot Gas is an on-demand gas delivery platform that connects households with trusted suppliers for fast doorstep refills. The core promise, you never run out of gas, required combining IoT-powered monitoring, predictive alerts, live order tracking, and digital payments into one seamless mobile experience. I designed the end-to-end flow across the home dashboard, checkout, order management, live tracking, and wallet.
           </p>
         </FadeUp>
 
@@ -189,8 +189,8 @@ export default function SkootGasCaseStudy() {
             {
               tag: "What users want",
               color: "text-accent",
-              heading: "Peace of mind — never unexpectedly running out of gas.",
-              body: "Users want to monitor their gas levels passively, receive alerts before they run low, and order a refill quickly when needed. They want to track deliveries in real time and manage household gas spending without friction. The underlying goal is not 'order gas' — it is 'never be caught without gas when cooking for my family.'",
+              heading: "Peace of mind, never unexpectedly running out of gas.",
+              body: "Users want to monitor their gas levels passively, receive alerts before they run low, and order a refill quickly when needed. They want to track deliveries in real time and manage household gas spending without friction. The underlying goal is not 'order gas'. It is 'never be caught without gas when cooking for my family.'",
             },
             {
               tag: "Where users struggle",
@@ -202,13 +202,13 @@ export default function SkootGasCaseStudy() {
               tag: "Why it matters to the business",
               color: "text-accent",
               heading: "Unreliable experiences kill retention in a category where loyalty should be easy to earn.",
-              body: "Gas is a recurring household need — repeat purchase frequency should be high. But without proactive monitoring, orders are reactive rather than planned, leading to abandoned carts when users find alternatives in the moment. Support costs rise with 'where is my order?' contacts. Low trust in delivery reliability directly reduces subscription and auto-refill adoption, which represents the highest-LTV customer segment.",
+              body: "Gas is a recurring household need, repeat purchase frequency should be high. But without proactive monitoring, orders are reactive rather than planned, leading to abandoned carts when users find alternatives in the moment. Support costs rise with 'where is my order?' contacts. Low trust in delivery reliability directly reduces subscription and auto-refill adoption, which represents the highest-LTV customer segment.",
             },
             {
               tag: "Design opportunity",
               color: "text-accent",
               heading: "Proactive monitoring and transparent delivery can turn a stressful utility into a trusted service.",
-              body: "The biggest design lever is shifting users from reactive to proactive: showing them their gas level before they need to think about it, and making ordering feel low-effort enough that they do it comfortably in advance. Transparent tracking and wallet integration remove the two biggest post-order pain points — uncertainty and payment friction — turning a one-time user into a loyal repeat customer.",
+              body: "The biggest design lever is shifting users from reactive to proactive: showing them their gas level before they need to think about it, and making ordering feel low-effort enough that they do it comfortably in advance. Transparent tracking and wallet integration remove the two biggest post-order pain points, uncertainty and payment friction, turning a one-time user into a loyal repeat customer.",
             },
           ].map((card, i) => (
             <FadeUp key={card.tag} delay={i * 0.07}>
@@ -277,8 +277,8 @@ export default function SkootGasCaseStudy() {
 
         <div className="space-y-8 mb-28">
           {[
-            { src: skootGasImage1, alt: "Skoot Gas — product screens overview" },
-            { src: skootGasImage2, alt: "Skoot Gas — key flows and screens" },
+            { src: skootGasImage1, alt: "Skoot Gas, product screens overview" },
+            { src: skootGasImage2, alt: "Skoot Gas, key flows and screens" },
           ].map((img, i) => (
             <FadeUp key={img.alt} delay={i * 0.08}>
               <div
@@ -330,7 +330,7 @@ export default function SkootGasCaseStudy() {
             <span className="text-xs text-muted-foreground tracking-widest block mb-6" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>REFLECTION</span>
             <p className="text-xl lg:text-2xl text-foreground/70 font-light leading-relaxed" style={{ fontFamily: "'Fraunces', serif" }}>
               A one-week sprint forces a kind of design clarity that longer timelines sometimes dilute. Every decision had to be justified immediately, and every feature had to earn its place. Skoot Gas taught me that the most important thing a utility app can do is{" "}
-              <span className="italic">make uncertainty disappear</span> — and that is almost always a communication problem before it is a technology problem.
+              <span className="italic">make uncertainty disappear</span>, and that is almost always a communication problem before it is a technology problem.
             </p>
           </div>
         </FadeUp>

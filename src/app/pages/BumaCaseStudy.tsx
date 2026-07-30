@@ -223,8 +223,8 @@ export default function BumaCaseStudy() {
 
         <div className="space-y-8 mb-28">
           {[
-            { src: bumaImage1, alt: "BUMA Awards — redesigned landing page overview" },
-            { src: bumaImage2, alt: "BUMA Awards — key sections and user journeys" },
+            { src: bumaImage1, alt: "BUMA Awards, redesigned landing page overview" },
+            { src: bumaImage2, alt: "BUMA Awards, key sections and user journeys" },
           ].map((img, i) => (
             <FadeUp key={img.alt} delay={i * 0.08}>
               <div

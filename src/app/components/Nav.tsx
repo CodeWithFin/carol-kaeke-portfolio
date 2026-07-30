@@ -63,7 +63,7 @@ export function Nav({
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="hover:opacity-80 transition-opacity"
               style={{ color: "var(--foreground)" }}
-              aria-label="Caroline Kaeke — home"
+              aria-label="Caroline Kaeke, home"
             >
               {logo}
             </button>
