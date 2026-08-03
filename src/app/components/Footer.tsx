@@ -1,5 +1,5 @@
 import { ChevronUp } from "lucide-react";
-import resumePDF from "../../../assets/CAROLINE KAEKE UIUX Resume.pdf?url";
+import resumePDF from "../../../assets/project-images/UIUX DESIGNER CV-CAROLINE.pdf?url";
 
 export function Footer() {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useScrollY } from "../lib/shared";
-import resumePDF from "../../../assets/CAROLINE KAEKE UIUX Resume.pdf?url";
+import resumePDF from "../../../assets/project-images/UIUX DESIGNER CV-CAROLINE.pdf?url";
 import { BackIcon } from "./BackIcon";
 import { BrandLogo } from "./BrandLogo";
 
